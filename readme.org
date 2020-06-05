@@ -15,27 +15,28 @@
   Wie von Moritz Gnisia in seinem [[https://gnisitricks.de/de/2018/09/Automatisch-Karteikarten-erstellen-Teil-1/][Blog]] vorstellt, genügt es
   beispielsweise, Abbildungen zu einem Thema in den Medienordner des
   aktiven Nutzerprofils gemeinsam mit einer =.csv= Datei abzulegen.
-  Diese zusätzliche Datei hat die Aufgabe, die Abbildungen mit den
-  korrespondierenden Lösungsworten so zu verknüpfen, dass Anki eine
-  interne Datenbank erstellen kann.
+  Diese zusätzliche Datei ermöglicht Anki, die Abbildungen mit den
+  korrespondierenden Lösungsworten in einer internen Datenbank zu
+  verknüpfen.
 
   Der von Moritz Gnisia vorgestellte Syntax ist dabei einfach genug,
-  um auch mit einem Skript wie beispielsweise Python programmatisch
-  eine solche Datei zu schreiben.  Der Syntax ist auch um eine dritte
-  Spalte erweiterbar, die /tags/ enthält, um einzelne Karten zu
-  verschlagworten.  Mit diesen Schlüsselworten kann Anki genutzt
-  werden, um ganze Gruppen von Karten gezielt ein- oder
-  auszuschließen, ein Lernen auf Kategorien zu fokussieren.
+  um auch mit Python programmatisch eine solche Datei zu schreiben.
+  Der Syntax ist dabei auch um eine dritte Spalte erweiterbar, die
+  /tags/ enthält, um einzelne Karten zu verschlagworten.  Mit diesen
+  Schlüsselworten kann Anki genutzt werden, um ganze Gruppen von
+  Karten gezielt ein- oder auszuschließen, ein Lernen auf Kategorien
+  zu fokussieren.
 
   Die beiden anderen zur Zeit verfügbaren Anki decks, die sich einer
   im deutschsprachigen Raum verbreiteten Stenographie widmen ([[https://ankiweb.net/shared/info/2107356863][DEK -
-  Deutsche Einheitskurzschrift (Stenographie)]] und [[https://ankiweb.net/shared/info/631862418][Steno (Deutsche
-  Einheitskurzschrift)]]) überlappen teilweise mit diesem Anki deck.  Um
-  Speicherplatz zu sparen, hatten sich die Autoren aber entschieden,
-  die Abbildungen als Bitmap =.png= in niedriger Auflösung zu
-  verwenden.  Damit wird aber das Lesen der Karten stellenweise
-  erschwert, gerade auch dann, wenn die Unterscheidung von
-  Strichstärken wichtig ist.
+  Deutsche Einheitskurzschrift (Stenographie)]] und
+  [[https://ankiweb.net/shared/info/631862418][Steno (Deutsche
+  Einheitskurzschrift)]]) überlappen teilweise mit diesem Anki deck.
+  Um Speicherplatz zu sparen, hatten sich die Autoren aber
+  entschieden, die Abbildungen als Bitmap =.png= in niedriger
+  Auflösung zu verwenden.  Damit wird aber das Lesen der Karten
+  stellenweise erschwert, gerade auch dann, wenn die Unterscheidung
+  von Strichstärken wichtig ist.
 
   Dieses Projekt zielt darauf ab, gerade auch diese Detailinformation
   dem Nutzer zur erhalten; dadurch gekennzeichnet, dass die
@@ -44,10 +45,10 @@
   Skripts dieses Projektes, die Abbildungen einheitlich umzubenennen
   und die relationale Tabelle (=dek2anki.csv=) zu erstellen.
   Kontrastierende Gegenüberstellungen (etwa =AG_ABER_IG=) werden
-  erkannt, und mit dem tag =Vergleich= in der dritten Spalte zu
-  markieren.  Zusätzlich wird versucht, auch die Verwendung von
-  typischen Symbolisierungen (Konsonantengruppen, Silben, Kürzel)
-  ausschließlich programmatisch zu finden.
+  erkannt und mit dem tag =Vergleich= in der dritten Spalte markiert.
+  Zusätzlich wird versucht, auch die Verwendung von typischen
+  Symbolisierungen (Konsonantengruppen, Silben, Kürzel) ausschließlich
+  programmatisch zuzuordnen.
 
   Moderiert von einem bash script nutzt dieses Projekt [[https://github.com/RazrFalcon/svgcleaner][svgcleaner]], um
   die Vektorabbildungen erheblich zu vereinfachen, ohne ihre
@@ -64,7 +65,7 @@
 
 * Nutzung
 
-  Nach entpackte release enthält das Anki deck =DEK_VS_svg.apkg=.  Es
+  Das entpackte release enthält das Anki deck =DEK_VS_svg.apkg=.  Es
   kann direkt in Anki importiert werden.  Die Verwendung etwas anderer
   Dateinamen als in den beiden Anki decks zur Stenographie erlaubt den
   parallelen Einsatz dieses Decks zu diesen.  Auf Grund der Anzahl der
@@ -110,9 +111,9 @@
   oder einem Regelbuch zu begleiten.
 
   Die bisher implementierten Regeln versuchen,
-  + bisher 17 konsonantischen Gruppen 'br', 'cr', 'fr', 'gr', 'kr', 'mpf',
-    'ndr', 'pfr', 'rdr', 'schl', 'schm', 'schn', 'schr', 'spr', 'str',
-    'wr', 'zw'
+  + bisher 17 konsonantischen Gruppen 'br', 'cr', 'fr', 'gr', 'kr',
+    'mpf', 'ndr', 'pfr', 'rdr', 'schl', 'schm', 'schn', 'schr', 'spr',
+    'str', 'wr', 'zw'
   + sowie bisher 59 Kürzel 'also', 'ander', 'ant', 'auf', 'aus',
     'besonder', 'bis', 'dar', 'deine', 'dessen', 'deutsch', 'dies',
     'doch', 'durch', 'fort', 'für', 'gegen', 'heit', 'hint', 'ion',
@@ -123,7 +124,7 @@
     'will', 'wird', 'woll', 'worden', 'wurd', 'zer', 'zum', 'zurück',
     'zurück', 'zusammen', 'zwischen'
   zu identifizieren.  Komplementäre Regeln suchen nach
-  + "ge-" am Wortanfang (im Gegensatz zu "gegen-")
-  + einfachem "sch" (im Gegensatz zu schl", "schm", "schn", "schr"),
-    "st" (im Gegensatz zu "str"), "tr" (im Gegensatz zu "str")
-  + "un-" am Wortanfang (im Gegensatz zu "unter-").
+  + 'ge-' am Wortanfang (im Gegensatz zu 'gegen-')
+  + einfachem 'sch' (im Gegensatz zu 'schl', 'schm', 'schn', 'schr'),
+    'st' (im Gegensatz zu 'str'), 'tr' (im Gegensatz zu 'str')
+  + 'un-' am Wortanfang (im Gegensatz zu 'unter-').
