@@ -1,0 +1,129 @@
+* Hintergrund
+
+  Wikimedia enthält mehr als 20 Tausend Illustrationen zur
+  Verkehrsschrift, der ersten Stufe der Vereinfachung der [[https://de.wikipedia.org/wiki/Deutsche_Einheitskurzschrift][Deutschen
+  Einheitskurzschrift]].  Nutzer [[https://commons.wikimedia.org/wiki/User:Thirunavukkarasye-Raveendran][Thirunavukkarasye-Raveendran]], der nicht
+  der Autor dieses Projektes ist, stellt diese frei als /public
+  domain/ zur Verfügung ([[https://commons.wikimedia.org/wiki/File:DEK_Deutsche_Einheitskurzschrift_-_Verkehrsschrift_-_Urheber.svg][Beispiel]]).
+
+  [[https://apps.ankiweb.net/][Anki]] ist ein frei verfügbares open-source Programm, Lernkarten in
+  Sammlungen zusammenzuführen (Anki decks), die auch von
+  Interessierten selbst erstellt werden können, beispielsweise für
+  Fremdsprachen ([[https://ankiweb.net/shared/decks/][Index]]).  Neben Text können diese Karten auch Medien
+  wie Abbildungen enthalten.
+
+  Wie von Moritz Gnisia in seinem [[https://gnisitricks.de/de/2018/09/Automatisch-Karteikarten-erstellen-Teil-1/][Blog]] vorstellt, genügt es
+  beispielsweise, Abbildungen zu einem Thema in den Medienordner des
+  aktiven Nutzerprofils gemeinsam mit einer =.csv= Datei abzulegen.
+  Diese zusätzliche Datei hat die Aufgabe, die Abbildungen mit den
+  korrespondierenden Lösungsworten so zu verknüpfen, dass Anki eine
+  interne Datenbank erstellen kann.
+
+  Der von Moritz Gnisia vorgestellte Syntax ist dabei einfach genug,
+  um auch mit einem Skript wie beispielsweise Python programmatisch
+  eine solche Datei zu schreiben.  Der Syntax ist auch um eine dritte
+  Spalte erweiterbar, die /tags/ enthält, um einzelne Karten zu
+  verschlagworten.  Mit diesen Schlüsselworten kann Anki genutzt
+  werden, um ganze Gruppen von Karten gezielt ein- oder
+  auszuschließen, ein Lernen auf Kategorien zu fokussieren.
+
+  Die beiden anderen zur Zeit verfügbaren Anki decks, die sich einer
+  im deutschsprachigen Raum verbreiteten Stenographie widmen ([[https://ankiweb.net/shared/info/2107356863][DEK -
+  Deutsche Einheitskurzschrift (Stenographie)]] und [[https://ankiweb.net/shared/info/631862418][Steno (Deutsche
+  Einheitskurzschrift)]]) überlappen teilweise mit diesem Anki deck.  Um
+  Speicherplatz zu sparen, hatten sich die Autoren aber entschieden,
+  die Abbildungen als Bitmap =.png= in niedriger Auflösung zu
+  verwenden.  Damit wird aber das Lesen der Karten stellenweise
+  erschwert, gerade auch dann, wenn die Unterscheidung von
+  Strichstärken wichtig ist.
+
+  Dieses Projekt zielt darauf ab, gerade auch diese Detailinformation
+  dem Nutzer zur erhalten; dadurch gekennzeichnet, dass die
+  Abbildungen in einem Vektorformat (=.svg=) hinterlegt sind.  Neben
+  dem programmatischen Download der =.svg= von Wikimedia helfen die
+  Skripts dieses Projektes, die Abbildungen einheitlich umzubenennen
+  und die relationale Tabelle (=dek2anki.csv=) zu erstellen.
+  Kontrastierende Gegenüberstellungen (etwa =AG_ABER_IG=) werden
+  erkannt, und mit dem tag =Vergleich= in der dritten Spalte zu
+  markieren.  Zusätzlich wird versucht, auch die Verwendung von
+  typischen Symbolisierungen (Konsonantengruppen, Silben, Kürzel)
+  ausschließlich programmatisch zu finden.
+
+  Moderiert von einem bash script nutzt dieses Projekt [[https://github.com/RazrFalcon/svgcleaner][svgcleaner]], um
+  die Vektorabbildungen erheblich zu vereinfachen, ohne ihre
+  Lesbarkeit während einer Sitzung mit Anki merklich zu
+  beeinträchtigen.  Auf diese Weise kann etwa eine Sammlung von
+  21148 Abbildungen (30. Mai 2020) auf etwa 30 MByte reduziert werden
+  (original: 144 MByte).
+
+  Während branch =master= die Werkzeuge zur Vorbereitung des Anki
+  decks enthält, dient branch =release_decks= ausschließlich zur
+  Aufnahme der dann in Anki erstellten decks.  Die releases enthalten
+  ausschließlich die aktuellen decks, dank nochmaliger Kompression
+  etwa 15 MByte.
+
+* Nutzung
+
+  Nach entpackte release enthält das Anki deck =DEK_VS_svg.apkg=.  Es
+  kann direkt in Anki importiert werden.  Die Verwendung etwas anderer
+  Dateinamen als in den beiden Anki decks zur Stenographie erlaubt den
+  parallelen Einsatz dieses Decks zu diesen.  Auf Grund der Anzahl der
+  einzelnen Karten ist es jedoch ratsam für diese Decks ein besonderes
+  Anki Nutzerprofil anzulegen.
+
+* Bekannte Einschränkungen
+
+  Das Zeichnen der hier genutzten =.svg= erfolgt durch Wikimedia Autor
+  [[https://commons.wikimedia.org/wiki/User:Thirunavukkarasye-Raveendran][Thirunavukkarasye-Raveendran]], der nicht der Autor dieses Projektes
+  ist, bisher im Alleingang.  Deshalb stellen die bisher
+  berücksichtigten Illustrationen /eine Auswahl/ dar.  Trotz aller
+  aufgewandten Sorgfalt können bei der Übertragung Fehler auftreten,
+  wie es auch in der Langschrift orthographische Fehler geben kann.
+  Vorschläge zur Verbesserung werden von ihm auf Wikimedia
+  berücksichtigt ([[https://commons.wikimedia.org/wiki/Category_talk:SVG_Deutsche_Einheitskurzschrift][hier]]).  Wiederkehrend soll durch abermaligen Einsatz
+  der Skripten dieses Projektes auch das Anki deck aktualisiert und
+  dessen Einträge korrigiert werden.
+
+  Momentan berücksichtigt das deck 21148 Abbildungen, wie sie am
+  30. Mai 2020 in Wikimedia zugänglich waren.
+
+  Einige Abbildungen von Thirunavukkarasye-Raveendran werden nicht in
+  diesem Anki deck berücksichtigt.  Das trifft insbesondere auf
+  Dateien zu, deren Dimension oder Inhalt weniger gut zu einem Lernen
+  mit Anki geeignet scheinen.  Da die von Anki gelesene =.csv= Datei
+  in UTF-8 kodiert sein soll und die Dateinamen auch Sonderzeichen
+  (etwa, Umlaute) enthält, mussten Dateien mit überlangen Dateinamen
+  ebenso unberücksichtigt bleiben.  Beispiele für ausgeschlossene
+  Dateien sind etwa dieses [[https://commons.wikimedia.org/wiki/File:DEK_Deutsche_Einheitskurzschrift_-_SETZKASTEN_NUR_K%C3%BCrzel.svg][Format]] und dieser [[https://commons.wikimedia.org/wiki/File:Z_DEK_Deutsche_Einheitskurzschrift_-_Verkehrsschrift_-_auf_be-_das_dem_den_der_deutsch_die_er_er-_es_f%C3%BCr_gegen_hat_ich_in_ist_kann_nicht_ohne_sind_so_und_ver-_vom_von_vor-_wo_%C3%BCber.svg][überlanger Name]].
+
+  Die automatische Verschlagwortung nach Konsonantengruppen und
+  Kürzeln in diesem Projekt ist unvollständig.  Es ist bekannt, dass
+  die Analyse von Buchstabenfolgen im Dateinamen, teilweise mit
+  Zerlegung in Silben ein notwendiges, manchmal jedoch ein nicht
+  ausreichendes Indiz für eine korrekte Zuordnung von
+  kurzschriftlichen Symbolisierungen ist.  Stellenweise werden
+  plausible Treffer übersehen, stellenweise werden auch nur
+  vermeintliche Beispiele vorgeschlagen (falsch-positiv).
+
+  Nutzern wird deshalb geraten, das kategorische Üben mit diesem Anki
+  deck mit einer Referenz wie etwa einem Stenographischem Wörterbuch
+  oder einem Regelbuch zu begleiten.
+
+  Die bisher implementierten Regeln versuchen,
+  + bisher 17 konsonantischen Gruppen 'br', 'cr', 'fr', 'gr', 'kr', 'mpf',
+    'ndr', 'pfr', 'rdr', 'schl', 'schm', 'schn', 'schr', 'spr', 'str',
+    'wr', 'zw'
+  + sowie bisher 59 Kürzel 'also', 'ander', 'ant', 'auf', 'aus',
+    'besonder', 'bis', 'dar', 'deine', 'dessen', 'deutsch', 'dies',
+    'doch', 'durch', 'fort', 'für', 'gegen', 'heit', 'hint', 'ion',
+    'keine', 'konnt', 'lich', 'lung', 'meine', 'mit', 'nichts',
+    'noch', 'nur', 'ohne', 'rung', 'schaft', 'schon', 'seine',
+    'selbst', 'sich', 'sind', 'solch', 'soll', 'sonder', 'über',
+    'unter', 'vielleicht', 'voll', 'vom', 'von', 'völl', 'wenn',
+    'will', 'wird', 'woll', 'worden', 'wurd', 'zer', 'zum', 'zurück',
+    'zurück', 'zusammen', 'zwischen'
+  zu identifizieren.  Komplementäre Regeln suchen nach
+  + "ge-" am Wortanfang (im Gegensatz zu "gegen-")
+  + einfachem "sch" (im Gegensatz zu schl", "schm", "schn", "schr"),
+    "st" (im Gegensatz zu "str"), "tr" (im Gegensatz zu "str")
+  + "un-" am Wortanfang (im Gegensatz zu "unter-").
