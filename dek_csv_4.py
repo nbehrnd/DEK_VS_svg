@@ -139,6 +139,68 @@ def remove_from_list():
         'ich_geben_dem_Mann_den_Kaffee'
     ]
 
+    # Remove of names
+    #
+    # There is a number of names I do not know well enough (yet) to
+    # consider their inclusion in the Anki deck.  Regardless if their
+    # name is interesting in terms of its form in Verkehrsschrift, as
+    # a preliminary rule, neither the names of women, nor the names of
+    # men will appear in the Anki deck.  Subject to change, exceptions
+    # to this are Émile Duployé, Franz Xaver Gabelsberger,
+    # John Robert Gregg, Karl Levasseur, Isaac Pitman, Wilhelm Stolze,
+    # Ferdinand Schrey, or Franz Jacob Wigard.
+    #
+    # Both lists are derived from the query in the set by 2020-05-30.
+
+    names_women = []
+    names_women = [
+        'Frau_Agnes_Miegel', 'Frau_Alice_Reinner', 'Frau_Angelika_Haase',
+        'Frau_Anke_Gaißler', 'Frau_Bettina_Raddatz', 'Frau_Emma_Stahl',
+        'Frau_Evamaria_Heyse', 'Frau_Gerda_Hofstätter',
+        'Frau_Hedwig_Courths-Mahler', 'Frau_Monika_Krahl',
+        'Frau_Renate_Schreiber', 'Frau_Therese_Giehse'
+    ]
+
+    names_men = []
+    names_men = [
+        'Herr_Adolf_Krauß', 'Herr_Albert_Boehringer',
+        'Herr_Albert_Richard_Mohr', 'Herr_Albrecht_Jungk',
+        'Herr_Alexander_Kahl', 'Herr_Alfred_von_Behr', 'Herr_Alois_Senefelder',
+        'Herr_Anton_Breitinger', 'Herr_Anton_Fiegl', 'Herr_Armin_Weyrauch',
+        'Herr_Artur_Schreiber', 'Herr_Benar_Heifetz', 'Herr_Benjamin_Fain',
+        'Herr_Benno_Schwarz', 'Herr_Brian_Priestley', 'Herr_Bruno_Gneisenau',
+        'Herr_Carl_Czerny', 'Herr_Carl_Friedrich_Goerdeler',
+        'Herr_Christian_Künneke', 'Herr_David_Nye', 'Herr_Detlef_Noack',
+        'Herr_Dieter_Kemmpf', 'Herr_Dieter_Stoltz', 'Herr_Dirk_Feltgen',
+        'Herr_Edgar_Theisen', 'Herr_Edmund_Reitter', 'Herr_Edvard_Grieg',
+        'Herr_Egon_Mertens', 'Herr_Elmar_Frings', 'Herr_Emil_Wiechert',
+        'Herr_Erich_Heyl', 'Herr_Eugen_Gantter', 'Herr_Ewald_Brabbée',
+        'Herr_Ewald_Frömming', 'Herr_Ewald_Mataré', 'Herr_Felix_Moor',
+        'Herr_Ferdinand_Wrede', 'Herr_Franz_Schubert',
+        'Herr_Frey_ABER_Herr_Fry', 'Herr_Friedrich_Engels',
+        'Herr_Friedrich_Treitschke', 'Herr_Fritz_Kögl', 'Herr_Fritz_Orff',
+        'Herr_Giacomo_Meyerbeer', 'Herr_Gustav_Frenssen', 'Herr_Hans_Eippert',
+        'Herr_Hans_Moser', 'Herr_Hans_Stubb', 'Herr_Harald_Asplund',
+        'Herr_Harald_Kreutzberg', 'Herr_Heinrich_Eyth', 'Herr_Hermann_Göring',
+        'Herr_Hubert_Benatzky', 'Herr_Hugo_Hartung', 'Herr_Ingo_Leitner',
+        'Herr_Jitzchak_Peretz', 'Herr_Johann_Einninger', 'Herr_Johann_Nestroy',
+        'Herr_Josef_Wittlich', 'Herr_Jörg_Uhland', 'Herr_Kai_Haferkamp',
+        'Herr_Karl_Marx', 'Herr_Klaus_Gmeiner', 'Herr_Ludwig_Schaffrath',
+        'Herr_Matti_Kekkonen', 'Herr_Max_Eyth', 'Herr_Moritz_Grabbe',
+        'Herr_Moritz_von_Kunowski', 'Herr_Nicolai_Hartmann',
+        'Herr_Olaf_Janssen', 'Herr_Otto_Linck', 'Herr_Otto_Pfeifer',
+        'Herr_Otto_Pfeiffer', 'Herr_Pericle_Fazzini', 'Herr_Peter_Krause',
+        'Herr_Reiner_Raitter', 'Herr_Reinhard_Haverkamp',
+        'Herr_Richard_Wagner', 'Herr_Rolf_Jungk', 'Herr_Rudolf_Breitscheid',
+        'Herr_Rudolf_Eucken', 'Herr_Simon_Schaffer', 'Herr_Stefan_Hentschel',
+        'Herr_Sven_Krüge', 'Herr_Sven_Krüger', 'Herr_Thomas_Dehler',
+        'Herr_Ullrich_Wintter', 'Herr_Victor_Levasseur', 'Herr_Walter_Dostal',
+        'Herr_Walter_Scheel', 'Herr_Walther_Neye', 'Herr_Werner_Egk',
+        'Herr_Wilhelm_Bleyle', 'Herr_Wilhelm_Kempff', 'Herr_Wilhelm_Raabe'
+    ]
+
+    black_list = black_list + empty_files + names_women + names_men
+
     os.chdir("dek_workshop")
     try:
         with open("dek2anki.csv", mode="r") as source:
