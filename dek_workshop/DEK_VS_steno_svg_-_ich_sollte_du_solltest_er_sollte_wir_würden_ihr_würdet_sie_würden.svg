@@ -1,0 +1,25 @@
+<svg height="280mm" viewBox="0 0 1346.5 992.1" width="380mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round" transform="translate(0 -60.236221)">
+  <path d="m29.6 529.3h1282.6" stroke="#969696" stroke-width="1.875"/>
+  <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+   <path d="m30.3 631.3h1282.7"/>
+   <path d="m30.3 428.9h1282.7"/>
+   <path d="m30.3 327.7h1282.7"/>
+  </g>
+  <path d="m29.6 933.5h1282.6" stroke="#969696" stroke-width="1.875"/>
+  <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+   <path d="m30.3 1035.4h1282.7"/>
+   <path d="m30.3 833.1h1282.7"/>
+   <path d="m30.3 731.9h1282.7"/>
+  </g>
+  <path d="m34 125.1h1282.7" stroke="#969696" stroke-width="1.875"/>
+  <path d="m34.8 227h1282.6" stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375"/>
+ </g>
+ <g font-family="Arial" font-size="37.5" letter-spacing="0" stroke-width=".9375" transform="translate(0 248.0315)" word-spacing="0">
+  <text x="321.98615" y="138.00294"><tspan stroke-width=".9375" x="321.98615" y="138.00294">LEER</tspan></text>
+  <text x="1031.3328" y="429.8479"><tspan stroke-width=".9375" x="1031.3328" y="429.8479">LEER</tspan></text>
+  <text x="1205.5841" y="-56.919369"><tspan stroke-width=".9375" x="1205.5841" y="-56.919369">LEER</tspan></text>
+  <text x="99.467102" y="712.05927"><tspan stroke-width=".9375" x="99.467102" y="712.05927">LEER</tspan></text>
+  <text x="593.81049" y="371.13278"><tspan stroke-width=".9375" x="593.81049" y="371.13278">LEER</tspan></text>
+ </g>
+</svg>

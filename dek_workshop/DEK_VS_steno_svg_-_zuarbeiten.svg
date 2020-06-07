@@ -1,0 +1,27 @@
+<svg height="210mm" viewBox="0 0 1052.4 744.1" width="297mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round">
+  <g transform="translate(0 -308.26772)">
+   <path d="m57.6 742.2h948.8" stroke="#969696" stroke-width="1.875"/>
+   <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+    <path d="m58.3 844.1h948.8"/>
+    <path d="m58.3 641.8h948.8"/>
+    <path d="m58.3 540.6h948.8"/>
+   </g>
+  </g>
+  <g stroke="#000">
+   <g stroke-linejoin="round" stroke-width="5.625">
+    <path d="m360.7 383 31.4 47.9 43.5-47.3"/>
+    <path d="m360.7 383 24 48"/>
+    <path d="m368.3 383 23.8 47.9"/>
+    <path d="m364.3 382.9 24 48"/>
+   </g>
+   <path d="m361 382h7.1" stroke-width="3.75"/>
+   <path d="m384.5 431.9h7.1" stroke-width="3.75"/>
+   <g stroke-linejoin="round" stroke-width="5.625">
+    <path d="m435.4 383.9 46.5-47.8-39 72.4c-8.4 15.5 3.5 25.6 20 21.7 2.8-.6 11.2-4.9 16.2-8.1l22.1-14.3"/>
+    <path d="m501.9 407.4c59.6-39.1 145.3-97.1 225.7-144.9m0 0c15-9.3 44.6-27.3 55.3-27.1 16.8.5 15.3 32 30.7 32.3 9.3.2 15.7-7.8 20.6-14.7"/>
+    <path d="m243.1 490.4c-3.7 5.6-5.7 12.5-6.2 17.6-.7 7.4 1.5 13.5 3.8 16.3 2.8 3.4 5.2 9.1 19 9 7 0 16.8-6.2 22.9-15.7 18.4-27.3 78.1-134.7 78.1-134.7"/>
+   </g>
+  </g>
+ </g>
+</svg>

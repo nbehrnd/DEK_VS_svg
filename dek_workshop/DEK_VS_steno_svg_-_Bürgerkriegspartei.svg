@@ -1,0 +1,44 @@
+<svg height="210mm" viewBox="0 0 1052.4 744.1" width="297mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round">
+  <g transform="translate(0 -308.26772)">
+   <path d="m14.4 742.2h1023.9" stroke="#969696" stroke-width="1.875"/>
+   <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+    <path d="m15.2 844.1h1023.8"/>
+    <path d="m15.2 641.8h1023.8"/>
+    <path d="m15.2 540.6h1023.8"/>
+   </g>
+  </g>
+  <g stroke="#000">
+   <g stroke-linejoin="round" stroke-width="5.625">
+    <path d="m68.1 334.8-42.4 73.1c-7.7 13.3 1.1 22.7 14.8 22.9 11.3.2 23.2-5.6 37.1-21.3"/>
+    <path d="m77.7 409.4 57.9-73.2 31.4 47.9 35.8-49.4"/>
+    <path d="m135.5 336.2 24 48"/>
+    <path d="m143.1 336.3 23.8 47.9"/>
+    <path d="m139.2 336.1 24 48"/>
+   </g>
+   <path d="m135.9 335.2h7.1" stroke-width="3.75"/>
+   <path d="m159.3 385.1h7.1" stroke-width="3.75"/>
+   <g stroke-linejoin="round" stroke-width="5.625">
+    <path d="m228.5 382.6 80.9-46.6 21.9 46.8"/>
+    <path d="m202.8 334.8c15.4-18.9 22.7-35.3 44.7-44.9 19.6-8.3 35 2.5 12.3 40.5l-31.2 52.3"/>
+    <path d="m499.6 385.6 100.3-124.2"/>
+    <path d="m331.4 382.8c24.7-44.1 61.4-78.4 111.9-89.3 53.6-11.6 95 8.8 56.3 92.1"/>
+    <path d="m599.9 261.4c16.6-20.3 26.1-24.7 36.2-26.5 15.6-2.7 23.2 9 4.8 42.7l-29.2 53.5"/>
+    <path d="m673.4 410.6 7.4-6.7 22.7-20.4 31 47.7"/>
+    <path d="m703.5 383.5 24 48"/>
+    <path d="m710.7 383.3 23.8 47.9"/>
+    <path d="m707.2 383.4 24 48"/>
+   </g>
+   <path d="m703.9 382.4h7.1" stroke-width="3.75"/>
+   <path d="m727.3 432.4h7.1" stroke-width="3.75"/>
+   <path d="m681 404.1c-12.8 12-29.6 21-36.8 24.6-55.7 28.4 44.6-169.4 102.2-194.4" stroke-linejoin="round" stroke-width="5.625"/>
+  </g>
+  <g stroke-linejoin="round" stroke-width="5.625">
+   <path d="m734.5 431.2 103.6-94.7-56.7 94.9 248.7-94.9" stroke="#0a0000"/>
+   <g stroke="#000">
+    <ellipse cx="294.07294" cy="612.37439" rx="19.78105" ry="15.662285" transform="matrix(.79083574 -.61202846 .61202846 .79083574 0 0)"/>
+    <path d="m736.4 240.1-120.7 77.7"/>
+   </g>
+  </g>
+ </g>
+</svg>

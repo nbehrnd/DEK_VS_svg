@@ -1,0 +1,41 @@
+<svg height="210mm" viewBox="0 0 1052.4 744.1" width="297mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round">
+  <g transform="translate(0 -308.26772)">
+   <path d="m57.6 742.2h948.8" stroke="#969696" stroke-width="1.875"/>
+   <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+    <path d="m58.3 844.1h948.8"/>
+    <path d="m58.3 641.8h948.8"/>
+    <path d="m58.3 540.6h948.8"/>
+   </g>
+  </g>
+  <g stroke="#000">
+   <g stroke-linejoin="round" stroke-width="5.625">
+    <path d="m649.4 336.1c-11.5 21.1-23.6 41.7-35.7 62.4-11.1 23.8-8 40.4 31.8 29.7"/>
+    <path d="m652.3 423.9c4.4-7.2-3.5-10.1-11.2-4.3-6.8 7 2.6 13.3 11.1 4.4"/>
+    <path d="m692.8 394.1-43.6 32.5"/>
+    <ellipse cx="308.22919" cy="756.01099" rx="25.728558" ry="20.371416" transform="matrix(.79083574 -.61202846 .61202846 .79083574 0 0)"/>
+   </g>
+   <path d="m728.9 398.2c.3 9.3-.4 14.6-6.3 21.9-3.6 4.5-8.8 8.3-16 11.1" stroke-width="5.624961"/>
+   <path d="m725.3 393c2 6.9 1.8 6.4.7 11.6-1.6 7.6-6.1 13.5-12.5 18.7-3.2 2.6-6.9 5-10.9 7.3" stroke-width="6.599955"/>
+   <path d="m708.3 424.8c-5.3 3.7-10.3 5.7-16.3 3.5" stroke-width="2.849979"/>
+   <path d="m714.5 388.2c7.4 1.6 9 4 10.4 10.8" stroke-width="2.849979"/>
+   <g stroke-linejoin="round">
+    <path d="m764.2 337-66.2 53.4" stroke-width="5.625"/>
+    <path d="m319.6 430.9c-23.9 5.7 81.5-47.9 81.5-47.9" stroke-width="5.625"/>
+    <path d="m319.6 430.9c3 .3 9.7-4.2 11-5 50.8-29 73.5-137 2.1-66.9" stroke-width="5.419139"/>
+    <g stroke-width="5.625">
+     <path d="m401.8 382.9 33.3 47.9"/>
+     <path d="m401.8 382.9 24 48"/>
+     <path d="m411.3 383 23.8 47.9"/>
+     <path d="m407.3 382.8 24 48"/>
+    </g>
+   </g>
+   <path d="m402.2 381.9h9" stroke-width="3.75"/>
+   <path d="m425.6 431.8h9" stroke-width="3.75"/>
+   <g stroke-linejoin="round" stroke-width="5.625">
+    <path d="m436 430.9c32.3-14.7 60.1-29.4 76.9-30.3 16-.6 15.8 28.7 32.6 30.7 6.8.8 11.9-1.5 15.9-4.6"/>
+    <path d="m561.4 426.7c8.8-6 44.9-44.9 87.9-90.6"/>
+   </g>
+  </g>
+ </g>
+</svg>

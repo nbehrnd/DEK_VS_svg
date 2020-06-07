@@ -1,0 +1,27 @@
+<svg height="210mm" viewBox="0 0 1052.4 744.1" width="297mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round" transform="translate(0 -308.26772)">
+  <path d="m57.6 742.2h948.8" stroke="#969696" stroke-width="1.875"/>
+  <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+   <path d="m58.3 844.1h948.8"/>
+   <path d="m58.3 641.8h948.8"/>
+   <path d="m58.3 540.6h948.8"/>
+  </g>
+ </g>
+ <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.625">
+  <g stroke="#000">
+   <path d="m732.8 431.7 56.1-89"/>
+   <path d="m788.9 342.7c21.6-28.9 36.1-52.4 56.9-56.8 10.7-2.7 14.3.7 18.7 3.2 7.6 4.3 8 17.2-6 41.5l-29.8 52.1"/>
+   <path d="m390.1 349.5c24.7-22.4 57-17.7 28 30.2l-31.5 52.1"/>
+  </g>
+  <g stroke="#000001">
+   <path d="m245.5 432.4 81.6-50.1-25.3 48.8 11.5.1s68.3-73.2 76.7-81.6"/>
+   <path d="m334 385.1-25.1 46.1"/>
+   <path d="m313.4 431.1-11.8.2"/>
+   <path d="m340.8 382.1-27.4 49"/>
+   <path d="m340.8 382.1-13.9-.1"/>
+   <path d="m332.2 383.2-25.1 46.1"/>
+  </g>
+ </g>
+ <circle cx="597.65015" cy="355.97061" r="10.653955"/>
+ <circle cx="582.2605" cy="404.98624" r="10.653955"/>
+</svg>

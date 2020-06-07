@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 1052.3622 744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="DEK Deutsche Einheitskurzschrift - Verkehrsschrift - freundlich.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="988.06956"
+     inkscape:cy="573.29548"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1592"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Grundlinien"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#969696;stroke-width:1.875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 57.556226,742.24566 H 1006.4206"
+       id="path3336"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.9375;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:3.74999998, 7.49999996;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 58.279456,844.14792 H 1007.1438"
+       id="path3336-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.9375;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:3.74999998, 7.49999996;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 58.279456,641.7697 H 1007.1438"
+       id="path3336-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.9375;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:3.74999998, 7.49999996;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 58.279456,540.58062 H 1007.1438"
+       id="path3336-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Stenozeichen"
+     style="display:inline">
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.625;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 413.68936,333.24234 c 53.2526,-10.75622 93.65756,-77.90171 87.42346,-94.28607 -5.37125,-14.11938 -39.46464,8.70695 -85.7311,85.08886 L 355.0302,431.65635 c 0,0 221.50662,-48.90674 234.56466,-50.91567"
+       id="path12351-7-1-33"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csccc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.625;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 589.59486,380.74068 c 26.65442,-6.36846 36.0429,23.67437 48.30639,37.17087 6.97199,7.58458 21.61785,2.48778 29.05968,-5.41805 9.51688,-10.11024 10.65619,-25.2399 5.42432,-28.88195 -6.29084,-4.37923 -25.927,3.213 -49.407,41.974 -36.14822,59.13747 -17.5553,57.21151 9.83169,46.04703"
+       id="path12351-7-1-6-63"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsscc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#00001f;stroke-width:5.625;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 632.80994,471.63258 c 11.04076,-3.86649 21.53691,-5.17742 26.98253,-5.58941 11.53052,-0.87158 25.61937,1.58126 22.82869,9.00364 -0.0618,0.2245 -0.0221,0.44948 -0.0619,0.66483 -0.237,1.39211 -1.06054,2.56292 -2.74918,3.40194 -3.29023,1.63619 -6.96409,-0.50021 -8.27252,-1.97664 -3.13086,-1.09638 1.18649,-11.91992 1.88856,-10.43659 1.26958,2.67128 0,0 8.13356,4.30722 0.16708,0.0919 0.20653,0.36259 0.29979,0.55677 0.11264,0.23235 0.2994,0.71839 0.39184,0.97751 0.20606,0.58521 0.27229,0.99711 0.35487,1.7222"
+       id="path12351-7-1-4-97-0-6-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cscsscssssc" />
+    <path
+       style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5.625;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path6585-73-3-9"
+       sodipodi:type="arc"
+       sodipodi:cx="751.89185"
+       sodipodi:cy="343.03729"
+       sodipodi:rx="5.4690289"
+       sodipodi:ry="1.8230096"
+       sodipodi:start="0"
+       sodipodi:end="6.2778271"
+       d="m 757.36087,343.03729 a 5.4690289,1.8230096 0 0 1 -5.4617,1.82301 5.4690289,1.8230096 0 0 1 -5.47633,-1.81812 5.4690289,1.8230096 0 0 1 5.44703,-1.82788 5.4690289,1.8230096 0 0 1 5.49093,1.81322 l -5.46895,0.01 z"
+       transform="rotate(10.473062)" />
+  </g>
+</svg>

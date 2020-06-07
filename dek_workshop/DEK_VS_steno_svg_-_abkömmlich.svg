@@ -1,0 +1,38 @@
+<svg height="210mm" viewBox="0 0 1052.4 744.1" width="297mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round">
+  <g transform="translate(0 -308.26772)">
+   <path d="m57.6 742.2h948.8" stroke="#969696" stroke-width="1.875"/>
+   <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+    <path d="m58.3 844.1h948.8"/>
+    <path d="m58.3 641.8h948.8"/>
+    <path d="m58.3 540.6h948.8"/>
+   </g>
+  </g>
+  <g stroke="#000">
+   <g stroke-width="5.625">
+    <path d="m446.7 430.9s235.4-78.1 262.5-91.3c22.6-9 50.8-4.1 29.9 21.8-27.4 33.8-45.5 50.2-39.4 63.9 2.2 5.1 8.6 6.7 16.1 5.5" stroke-linejoin="round"/>
+    <path d="m741.8 337.6c10.3 4.2 3.6 26.9-13.1 43.2-14.4 14-24.5 28.2-30.6 40.5"/>
+    <path d="m740 338.5c.8-1.1 3.9 6.1.7 14.2-3.2 8.4-12.8 17.8-18.3 22.9-10.8 10.1-30.6 29-24.3 45.7"/>
+   </g>
+   <g stroke-width="2.8125">
+    <path d="m731.4 336.8c11.3 1.3 8.8 6.5 9.1 11"/>
+    <path d="m703.2 414.1c-2.7 4.9-3.8 12 2.3 14.5"/>
+    <path d="m695.5 415.5c-.1 5.7 2.9 11.5 4.9 13.1"/>
+   </g>
+   <path d="m362.8 418.7c14.8-17.2 38.7-37.5 64.5-36 19.6 1.1 29.7 16.2 19.5 48.1" stroke-linejoin="round" stroke-width="5.625"/>
+  </g>
+  <g stroke="#010000">
+   <g stroke-linejoin="round">
+    <path d="m363.6 335.7-47.8 86.7" stroke-width="6.5625"/>
+    <path d="m259.9 430.5 94.4-95.2-39 72.4c-5.4 10.1-.7 17.9 6.9 21.3 7.1 4.1 22.2 2.6 29.2-1.3 3.2-1.8 6.9-4.6 11.3-9.1" stroke-width="5.625"/>
+    <path d="m359 335.7-44.7 81.9" stroke-width="6.5625"/>
+   </g>
+   <path d="m320.8 416.3c-1.6 4.1-2.6 6.5.8 11.9" stroke-width="3.75"/>
+   <path d="m363.6 335.7-9.3-.4" stroke-linejoin="round" stroke-width="6.5625"/>
+  </g>
+  <g stroke="#000" stroke-linejoin="round">
+   <path d="m715.8 430.7c10.8-1.6 22.5-12.6 37.9-13.7 5.9-.4 11.4.1 15.7 2.2" stroke-width="5.625"/>
+   <path d="m832.5 291.8a5.9 5.9 0 0 1 -5.9 5.9 5.9 5.9 0 0 1 -5.9-5.9 5.9 5.9 0 0 1 5.9-5.9 5.9 5.9 0 0 1 5.9 5.8h-5.9z" stroke-width="6.571438" transform="matrix(.98610517 .16612221 -.16612221 .98610517 0 0)"/>
+  </g>
+ </g>
+</svg>

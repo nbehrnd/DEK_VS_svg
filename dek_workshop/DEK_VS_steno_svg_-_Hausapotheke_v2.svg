@@ -1,0 +1,43 @@
+<svg height="210mm" viewBox="0 0 1052.4 744.1" width="297mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round">
+  <g transform="translate(0 -308.26772)">
+   <path d="m57.6 742.2h948.8" stroke="#969696" stroke-width="1.875"/>
+   <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+    <path d="m58.3 844.1h948.8"/>
+    <path d="m58.3 641.8h948.8"/>
+    <path d="m58.3 540.6h948.8"/>
+   </g>
+  </g>
+  <g stroke="#000">
+   <g stroke-linejoin="round">
+    <path d="m300.5 431.8c57.6-20.9 87.6-147.4 11-72.1" stroke-width="5.625"/>
+    <path d="m300.5 431.8 57.4 2.3" stroke-width="5.419139"/>
+    <ellipse cx="-.003656" cy="577.75409" rx="25.728558" ry="20.371416" stroke-width="5.625" transform="matrix(.79083574 -.61202846 .61202846 .79083574 0 0)"/>
+   </g>
+   <path d="m376.1 445.9c.3 9.3-.4 14.6-6.3 21.9-3.6 4.5-8.8 8.3-16 11.1" stroke-width="5.624961"/>
+   <path d="m372.5 440.6c2 6.9 1.8 6.4.7 11.6-1.6 7.6-6.1 13.5-12.5 18.7-3.2 2.6-6.9 5-10.9 7.3" stroke-width="6.599955"/>
+   <path d="m355.4 472.5c-5.3 3.7-10.3 5.7-16.3 3.5" stroke-width="2.849979"/>
+   <path d="m361.7 435.9c7.4 1.6 9 4 10.4 10.8" stroke-width="2.849979"/>
+   <g stroke-linejoin="round">
+    <g stroke-width="5.625">
+     <path d="m711.6 436.5s-302.3 93.8-311.8 95.7"/>
+     <path d="m499.1 338.5c-24.9 8-164.5 109-164.5 109"/>
+     <path d="m399.8 532.2c-55 17.3 33.4-131 77.6-177.7 4.7-5 14.6-17.1 33.3-18.6"/>
+     <path d="m465.1 369.7-82.8 150.3"/>
+     <path d="m445.6 395.5-53.8 98.9"/>
+    </g>
+    <path d="m387.7 533.4c-7.4-6.7-3-16.4 2.6-27.7" stroke-width="3.75"/>
+    <g stroke-width="5.625">
+     <path d="m473.4 359.1-36.1 57.5"/>
+     <path d="m459.4 377.9c-37.1 42.4-66 96.6-74.8 128.9"/>
+    </g>
+   </g>
+   <path d="m425 426-36.6 76.4" stroke-width="3.75"/>
+   <g stroke-width="5.625">
+    <path d="m711.6 436.5-55.1 96.9" stroke-linejoin="round"/>
+    <path d="m656.5 533.4c78.8-64.1 154.6-59.1 136.1-.1" stroke-linejoin="round"/>
+    <path d="m838.3 495-45.7 38.3"/>
+   </g>
+  </g>
+ </g>
+</svg>

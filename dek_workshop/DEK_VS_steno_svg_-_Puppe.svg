@@ -1,0 +1,17 @@
+<svg height="210mm" viewBox="0 0 1052.4 744.1" width="297mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round">
+  <g transform="translate(0 -308.26772)">
+   <path d="m57.6 742.2h948.8" stroke="#969696" stroke-width="1.875"/>
+   <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+    <path d="m58.3 844.1h948.8"/>
+    <path d="m58.3 641.8h948.8"/>
+    <path d="m58.3 540.6h948.8"/>
+   </g>
+  </g>
+  <g stroke="#02000c" stroke-linejoin="round" stroke-width="5.612527">
+   <path d="m443.2 416c-7.5 4.9-15 9.4-22.3 11.6-7.4 2.3-14.5 4.3-21.2 3.3-33.1-5.1 46.3-141.1 87.2-184.5 4.7-5 11.2-10.7 18.8-11.9"/>
+   <path d="m584.4 293.6c-6.2 3-128.8 112.4-141.2 122.4"/>
+   <path d="m602.4 427.5c-31 28.5-66.4 58.8-108.7 58.2-40.5-.6 42.2-141.5 84.3-186 4.7-5 11.2-10.7 18.8-11.9"/>
+  </g>
+ </g>
+</svg>
