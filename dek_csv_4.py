@@ -2,7 +2,7 @@
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:
+# edit:    2020-06-07 (YYYY-MM-DD)
 #
 """ Consolidation of dek_quick_csv.py's dek2anki.csv relational table.
 
@@ -110,6 +110,33 @@ def remove_from_list():
         'Vokale_und_Diphthonge_v8c', 'Vokale_und_Diphthonge_v9c',
         'Vokale_und_Diphthonge_v10c', 'Vokale_und_Diphthonge_v11c',
         'Vokale_und_Diphthonge_v12c', 'Vokale_und_Diphthonge_v13c', 'z_zr_zw'
+    ]
+
+    # Remove of empty examples
+    #
+    # The .svg illustrations used in this project are created by
+    # WikiMedia author Thirunavukkarasye-Raveendran in small batches.
+    # There are a few the author now no longer considers as good and
+    # marks them internally by the string "LEER".  Eventually, upon
+    # sufficient completion of his project and to be initiated by
+    # Thirunavukkarasye-Raveendran, only a Wikimedia administrator is
+    # allowed to remove these files from Wikimedia's servers.
+    #
+    # For now, these files already may be excluded from the creation
+    # of the Anki deck.  In the set of data fetched by May 30, 2020,
+    # they were identified with searchmonkey's content analysis of the
+    # .svg files for the string "LEER".
+    #
+    # https://packages.debian.org/bullseye/searchmonkey
+
+    empty_files = []
+    empty_files = [
+        'April_v2', 'aqu_v2', 'ausleeren', 'beglauben', 'Beine_v2',
+        'Ceylon_v2', 'Disponent_v2', 'friedllich', 'fügsam_v2', 'meinen',
+        'Militär_v1', 'Militär_v2', 'Militär_v3', 'Mistral_v2', 'Nachfalter',
+        'Rohheit_v2', 'Schläge_v2', 'sogenannt_v2', 'Transport_v2',
+        'vermittet', 'Volk_v2', 'Weltall_v2', 'Wikipedia_v1', 'Wikipedia_v2',
+        'ich_geben_dem_Mann_den_Kaffee'
     ]
 
     os.chdir("dek_workshop")
