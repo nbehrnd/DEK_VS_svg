@@ -190,24 +190,52 @@ def processing_for_linux():
     # For efficiency, Linux' first attempt is to call wget2.  If this
     # fails, wget serves as fallback.
 
+#    try:
+#        command = str(
+#            "cat addresslist.txto | xargs -0 -P {} wget2 -nv -t 21".format(use_processors))
+#        sub.call(command, shell=True)
+#    except IOError:
+#        print("Problem using wget2; attempt using slower wget instead.")
+#        try:
+#            command = str(
+#                "cat addresslist.txto | xargs -0 -P {} wget2 -nv -t 21".format(
+#                    use_processors))
+#            sub.call(command, shell=True)
+#        except IOError:
+#            print("Linux based xargs/wget fetch of the data failed.  Exit.")
+#            sys.exit()
+#
+#    os.remove("addresslist.txto")
+
+# known to work -- faster, start:
     try:
-        command = str(
-            "cat addresslist.txto | xargs -P {} wget2 -nv -t 21 --progress=bar"
-            .format(use_processors))
+        command = str("cat addresslist.txto | parallel -j4 'wget2 {}'")
         sub.call(command, shell=True)
     except IOError:
-        print("Problem using wget2; attempt using slower wget instead.")
+        print("parallel/wget2 failed.  Exit")
+    # known to work, end.
+    
+        # known to work, not as fast, start:
         try:
-            command = str(
-                "cat addresslist.txto | xargs -P {} wget2 -nv -t 21".format(
-                    use_processors))
+            command = str("cat addresslist.txto | parallel -j4 'wget {}'")
             sub.call(command, shell=True)
         except IOError:
-            print("Linux based xargs/wget fetch of the data failed.  Exit.")
-            sys.exit()
+            print("parallel/wget failed.  Exit")
+        # exit method not as fast.
 
-    os.remove("addresslist.txto")
-
+            # the linear method / slow:
+            # known to work, start:
+            with open("addresslist.txto", mode="r") as source:
+                for entry in source:
+                    try:
+                        command = str("wget2 -t 21 {}".format(str(entry).strip()))
+                        sub.call(command, shell=True)
+                    except IOError:
+                        print("\nCheck if wget was installed in your system.")
+                        print("See, for example, https://en.wikipedia.org/wiki/Wget")
+                        print("The script stops here.  Exit.")
+                        sys.exit()
+                    # known to work, end.
 
 def define_svg_harvest():
     """Select Windows/Linux and type of .svg deposit.
