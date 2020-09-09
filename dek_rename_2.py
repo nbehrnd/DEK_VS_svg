@@ -1,16 +1,17 @@
 # name:    dek_rename.py
 # author:  nbehrnd@yahoo.com
+# license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:
+# edit:    2020-09-08 (YYYY-MM-DD)
 #
-#
-""" Rename the .svg for an Anki deck.
+"""Rename the .svg for an Anki deck.
 
 There already is an Anki deck about steno / DEK using .png.  At present,
-its coverage is quite different and with little overlap to the one when
-accessing Wikimedia's category of DEK from scratch.  There is no reason
-to create a deck which would overwrite the former.  Thus, .svg will be
-renamed differently in a pattern of
+its coverage is differs and there is overlap to the one when accessing
+the ones drawn and filed by Thirunavukkarasye-Raveendran as .svg on
+Wikimedia.  There is no reason to create an Anki deck which would
+overwrite the former.  Thus, .svg of this project will be renamed in a
+pattern of
 
 DEK_VS_steno_svg_-_name.svg
 
@@ -26,8 +27,12 @@ The presence of umlauts requires the script called by
 
 python dek_rename.py
 
-to use Python 3.  It will create a folder 'dek_workshop' with otherwise
-copies of Wikimedia's .svg deposit in sub-folder 'raw_data'. """
+to use Python 3 one level above folder "raw_data" (initial work) and
+possibly "antechamber".  During an initial work with the data, a blank
+folder 'dek_workshop' will be created, retaining the original .svg as
+fetched from Wikimedia.  If the work targets an update of already .svg
+files, this script's action is to be redirected accordingly to
+'antechamber', which depends on the user's explicit input."""
 
 import os
 import shutil
@@ -58,11 +63,16 @@ def only_check_presence_raw_data():
 
 
 def check_workshop_folder():
-    """ Work on the files should take place in a dedicated folder. """
+    """Work on the files should take place in a dedicated folder."""
     create = True
     for element in os.listdir("."):
         if (str(element) == str("dek_workshop")) and os.path.isdir(element):
-            create = False
+            try:
+                shutil.rmtree("dek_workshop")
+                os.mkdir("dek_workshop")
+            except IOError:
+                print("Creation of folder 'dek_workshop' failed.  Exit.")
+            break
 
     if create:
         try:
@@ -73,12 +83,31 @@ def check_workshop_folder():
 
 
 def populate_workshop():
-    """ Populate 'dek_workshop' with copies of the .svg from 'raw_data'. """
+    """Populate 'dek_workshop' with copies of the .svg from 'raw_data'."""
     root = os.getcwd()
     deposit = os.path.join(root, 'dek_workshop')
     os.chdir("raw_data")
 
-    # identify the relevant files:
+    register = []
+    for file in os.listdir("."):
+        if file.endswith(".svg"):
+            register.append(file)
+    register.sort()
+
+    for entry in register:
+        original = os.path.join(str(os.getcwd()), str(entry))
+        copy = os.path.join(str(deposit), str(entry))
+        try:
+            shutil.copy(original, copy)
+        except IOError:
+            print("Problem copying file '{}'.".format(entry))
+            continue
+
+    os.chdir(root)
+
+
+def file_renamer():
+    """Shorten the file names used for the copied .svg."""
     register = []
     for file in os.listdir("."):
         if file.endswith(".svg"):
@@ -103,19 +132,56 @@ def populate_workshop():
 
             # file operations:
             print(new_filename)
-            shutil.copy(entry, os.path.join(deposit, new_filename))
+            #            shutil.copy(entry, os.path.join(deposit, new_filename))
+            shutil.copy(entry, new_filename)
 
         except OSError:
             print("PROBLEM: {}".format(new_filename))
 
 
+def initial_or_update():
+    """Choose between initial or updating work."""
+    print("\nChoose if the current work is about")
+    print("[1]    creating the Anki deck for the first time,")
+    print("[2]    eventually updates an already existing set, or")
+    print("[q]    Exit the script whatsoever.")
+    choice = input("\nyour choice: ")
+
+    if str(choice) == str(1):
+        try:
+            check_workshop_folder()
+            only_check_presence_raw_data()
+            populate_workshop()
+            os.chdir(os.path.join(str(os.getcwd()), str("workshop")))
+            file_renamer()
+        except IOError:
+            print("Folder 'workshop' for 'raw_data' inaccessible.  Exit.")
+            sys.exit()
+
+    elif str(choice) == str(2):
+        try:
+            os.chdir("antechamber")
+            check_workshop_folder()
+            populate_workshop()
+            os.chdir(os.path.join(str(os.getcwd()), str("workshop")))
+            file_renamer()
+        except IOError:
+            print("Folder 'workshop' for 'antechamber' inaccessible.  Exit.")
+            sys.exit()
+
+    elif (str(choice).lower() == str("q")) or (str(choice) not in ["1", "2"]):
+        print("\nThe script stops here.  Exit.")
+        sys.exit()
+
+
 def main():
     """ Join the functions. """
     check_python()
-    only_check_presence_raw_data()
-    check_workshop_folder()
-    populate_workshop()
+    initial_or_update()
 
 
-main()
-# END
+#    check_workshop_folder()
+#    populate_workshop()
+
+if __name__ == "__main__":
+    main()
