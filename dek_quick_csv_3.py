@@ -72,7 +72,7 @@ def create_csv():
     for file in os.listdir("."):
         if file.endswith(".svg"):
             file_register.append(file)
-    file_register.sort()
+    file_register.sort(key=str.lower)
 
     for entry in file_register:
         file_name = str(entry)
