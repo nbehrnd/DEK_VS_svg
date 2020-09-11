@@ -38,6 +38,7 @@ import os
 import shutil
 import sys
 
+from datetime import date
 
 def check_python():
     """Assure the script is used with Python 3, only."""
@@ -85,6 +86,12 @@ def create_csv():
 
     try:
         with open("dek2anki.csv", mode="w") as newfile:
+            today = date.today()
+            header = str("# file: dek2anki.csv\n")
+            header += str("# date: {} (YYYY-MM-DD)\n".format(today))
+            header += str("# data: {}\n#\n".format(len(csv_register)))
+            newfile.write(header)
+
             for record in csv_register:
                 keep = str("{}\n".format(record))
                 newfile.write(keep)

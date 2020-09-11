@@ -207,7 +207,10 @@ def remove_from_list():
     os.chdir("dek_workshop")
     try:
         with open("dek2anki.csv", mode="r") as source:
-            old_register = source.readlines()
+            for line in source:
+                if str(line).startswith("#") is False:
+                    old_register.append(str(line).strip())
+
     except IOError:
         print("\nFile 'dek2anki.csv' is inaccessible.")
         print("Maybe a run of dek_quick_csv.py solves this issue.\n")
@@ -215,7 +218,6 @@ def remove_from_list():
 
     for line in old_register:
         global check
-        check = str(line).strip()  # remove, e.g. line feed
         check = check.split(";")[0]  # identify the easier to use key
         if (check in black_list) or (len(str(check)) > 70):
             pass
