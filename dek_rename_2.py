@@ -1,8 +1,11 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 # name:    dek_rename.py
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:    2020-09-08 (YYYY-MM-DD)
+# edit:    2020-09-11 (YYYY-MM-DD)
 #
 """Rename the .svg for an Anki deck.
 

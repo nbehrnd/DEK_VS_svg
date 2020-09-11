@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 # name:    dek_update_changed_1d.py
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-09-08 (YYYY-MM-DD)
-# edit:
+# edit:    2020-09-11 (YYYY-MM-DD)
 #
 """Indicate the modified (rewritten) DEK .svg for a visual inspection.
 

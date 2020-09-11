@@ -1,8 +1,10 @@
-# name:    dek_quick_csv.py
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:    2020-08-09 (YYYY-MM-DD)
+# edit:    2020-09-11 (YYYY-MM-DD)
 #
 """Quick generation of a minimal relational .csv table for Anki.
 

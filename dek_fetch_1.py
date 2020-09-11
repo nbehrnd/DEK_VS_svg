@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 # name:    dek_fetch.py
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-06-02 (YYYY-MM-DD)
-# edit:    2020-09-08 (YYYY-MM-DD)
+# edit:    2020-09-11 (YYYY-MM-DD)
 #
 """Collect the original .svg about DEK from Wikimedia.
 

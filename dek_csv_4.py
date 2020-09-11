@@ -1,8 +1,11 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 # name:    dek_csv.py
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:    2020-09-09 (YYYY-MM-DD)
+# edit:    2020-09-11 (YYYY-MM-DD)
 #
 """Extend dek_quick_csv.py's relational table dek2anki.csv.
 
