@@ -5,7 +5,7 @@
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:    2020-09-11 (YYYY-MM-DD)
+# edit:    2020-09-15 (YYYY-MM-DD)
 #
 """Rename the .svg for an Anki deck.
 
@@ -26,17 +26,16 @@ specialists about the deck's purpose.  Even if not this popular like
 "Gregg" or "shorthand", a colloquial "steno" equally may be understood
 in other languages of the Latin script, too.
 
-The presence of umlauts requires the script called by
+Because the file names may contain umlauts, the script's action is
+constrained to Python 3.  It is launched from the CLI by
 
-python dek_rename.py
+python dek_rename.py [-i | -u]
 
-to use Python 3 one level above folder "raw_data" (initial work) and
-possibly "antechamber".  During an initial work with the data, a blank
-folder 'dek_workshop' will be created, retaining the original .svg as
-fetched from Wikimedia.  If the work targets an update of already .svg
-files, this script's action is to be redirected accordingly to
-'antechamber', which depends on the user's explicit input."""
+to either work on data of an initial fetch (parameter -i), or on data
+leading to an update (parameter -u).  Folders 'dek_workshop' will be
+populated, to preserve the original data from further processing."""
 
+import argparse
 import os
 import shutil
 import sys
@@ -65,6 +64,18 @@ def only_check_presence_raw_data():
         sys.exit()
 
 
+def only_check_presence_antechamber():
+    """ This time, only probe if there is folder antechamber. """
+    presence_raw_data = False
+    for element in os.listdir("."):
+        if (str(element) == str("antechamber")) and os.path.isdir(element):
+            presence_raw_data = True
+            break
+    if presence_raw_data is False:
+        print("Folder 'antechamber' is missing.  Exit.")
+        sys.exit()
+
+
 def check_workshop_folder():
     """Work on the files should take place in a dedicated folder."""
     create = True
@@ -85,106 +96,88 @@ def check_workshop_folder():
             sys.exit()
 
 
-def populate_workshop():
-    """Populate 'dek_workshop' with copies of the .svg from 'raw_data'."""
+def inital_copy():
+    """Provide 'dek_workshop' with copies about the initally fetched .svg."""
     root = os.getcwd()
-    deposit = os.path.join(root, 'dek_workshop')
-    os.chdir("raw_data")
-
     register = []
+
+    os.chdir("raw_data")
     for file in os.listdir("."):
         if file.endswith(".svg"):
             register.append(file)
     register.sort()
 
     for entry in register:
-        original = os.path.join(str(os.getcwd()), str(entry))
-        copy = os.path.join(str(deposit), str(entry))
+        print(entry)
+        old_path = os.path.join(os.getcwd(), str(entry))
+
+        key = str(entry).split("_-_")[-1]
+        new_file_name = ''.join(["DEK_VS_steno_svg_-_", str(key)])
+
+        new_path = os.path.join(root, str("dek_workshop"), str(new_file_name))
         try:
-            shutil.copy(original, copy)
+            shutil.copy(old_path, new_path)
         except IOError:
-            print("Problem copying file '{}'.".format(entry))
+            print("Error copying file '{}' into folder 'dek_worksop'.".format(
+                entry))
             continue
 
-    os.chdir(root)
 
-
-def file_renamer():
-    """Shorten the file names used for the copied .svg."""
+def updating_copy():
+    """Populate 'dek_workshop' for the updating branch."""
+    root = os.getcwd()
     register = []
+
     for file in os.listdir("."):
         if file.endswith(".svg"):
             register.append(file)
     register.sort()
 
-    # build new names for the files eventually copied to dek_workshop:
-    print("\nWork on:")
     for entry in register:
+        print(entry)
+        old_path = os.path.join(root, str(entry))
+
+        key = str(entry).split("_-_")[-1]
+        new_file_name = ''.join(["DEK_VS_steno_svg_-_", str(key)])
+
+        new_path = os.path.join(root, str("dek_workshop"), str(new_file_name))
         try:
-            # remove old prefix:
-            content = str(entry).split("_-_")[-1]
-            # specialty for a small group of entries
-            if str("Verkehrsschrift_") in str(content):
-                content = str(content)[17:]
-
-            # define a new prefix:
-            prefix = str("DEK_VS_steno_svg_-_")
-
-            # build the new file name:
-            new_filename = ''.join([prefix, content])
-
-            # file operations:
-            print(new_filename)
-            #            shutil.copy(entry, os.path.join(deposit, new_filename))
-            shutil.copy(entry, new_filename)
-
-        except OSError:
-            print("PROBLEM: {}".format(new_filename))
-
-
-def initial_or_update():
-    """Choose between initial or updating work."""
-    print("\nChoose if the current work is about")
-    print("[1]    creating the Anki deck for the first time,")
-    print("[2]    eventually updates an already existing set, or")
-    print("[q]    Exit the script whatsoever.")
-    choice = input("\nyour choice: ")
-
-    if str(choice) == str(1):
-        try:
-            check_workshop_folder()
-            only_check_presence_raw_data()
-            populate_workshop()
-            os.chdir(os.path.join(str(os.getcwd()), str("workshop")))
-            file_renamer()
+            shutil.copy(old_path, new_path)
         except IOError:
-            print("Folder 'workshop' for 'raw_data' inaccessible.  Exit.")
-            sys.exit()
-
-    elif str(choice) == str(2):
-        try:
-            os.chdir("antechamber")
-            check_workshop_folder()
-            populate_workshop()
-            os.chdir(os.path.join(str(os.getcwd()), str("workshop")))
-            file_renamer()
-        except IOError:
-            print("Folder 'workshop' for 'antechamber' inaccessible.  Exit.")
-            sys.exit()
-
-    elif (str(choice).lower() == str("q")) or (str(choice) not in ["1", "2"]):
-        print("\nThe script stops here.  Exit.")
-        sys.exit()
+            print("Error copying file '{}' into folder 'dek_worksop'.".format(
+                entry))
+            continue
 
 
-def main():
-    """ Join the functions. """
-    check_python()
-    initial_or_update()
+# clarifications for argparse, start:
+parser = argparse.ArgumentParser(
+    description='.svg file renamer for Wikimedia .svg about DEK')
 
+group = parser.add_mutually_exclusive_group(required=True)
+group.add_argument('-i',
+                   '--initial',
+                   action='store_true',
+                   help='initial fetch of the .svg data')
+group.add_argument('-u',
+                   '--update',
+                   action='store_true',
+                   help='update fetch of the .svg data')
 
-#    check_workshop_folder()
-#    populate_workshop()
+args = parser.parse_args()
+# clarifications for argparse, end.
 
 if __name__ == "__main__":
-    main()
+    check_python()
+    if args.initial:
+        print("aim for an initial fetch of the data.")
+        only_check_presence_raw_data()
+
+        check_workshop_folder()
+        inital_copy()
+
+    elif args.update:
+        print("aim to update already existing data.")
+        only_check_presence_antechamber()
+        os.chdir("antechamber")
+        check_workshop_folder()
+        updating_copy()
