@@ -5,7 +5,7 @@
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-06-02 (YYYY-MM-DD)
-# edit:    2020-09-11 (YYYY-MM-DD)
+# edit:    2020-09-15 (YYYY-MM-DD)
 #
 """Collect the original .svg about DEK from Wikimedia.
 
@@ -14,33 +14,35 @@ There are 21k+ of .svg files on Wikimedia sharing the tag
 SVG Deutsche Einheitskurzschrift
 
 created by Wikimedia user Thirunavukkarasye-Raveendran, who is not the
-author of this project, and published as public domain.  The addresses
-of these .svg files may be obtained with these tags as a zipped .txt
-file from
+author of this project, and published as public domain.  The open site
 
 https://tools.wmflabs.org/wikilovesdownloads/
 
-After decompressing, this text file is used as sole parameter for the
-current script, dek_fetch_1.py, to collect the .svg with wget while
-preserving the time stamp of their upload to Wikimedia when running
+generates a list of the relevant addresses for the files in question
+with the keywords "SVG Deutsche Einheitskurzschrift" as zip-compressed
+text file, or to use a recent version of wikimedia_addresses.txt from
 
-python dek_fetch_1.py [addresslist.txt]
+https://github.com/nbehrnd/dek_wikimedia
 
-Lines preceded by the octohorpe # will be treated as comment to skip,
-these may contain e.g. a time stamp.
+The script is launched from the CLI of Python 3 by a call in pattern of
 
-The addresses in [addresslist.txt] frequently encode characters like
-umlauts and accents which are not part of the ASCII table.  This is
-one of the reasons why this script's use is restricted to Python 3.
+python dek_fetch_1.py wikimedia_addresss.txt [-i | -u]
 
-Initially, the script was written to obtain local copies of the .svg
-stored in folder 'raw_data'; this prepared further processing of these
-with the other scripts of this project eventually yielding the Anki
-deck.  To ease updating the Anki deck, the script now allows to direct
-the .svg listed in [addresslist.txt] into folder 'antechamber' instead
-of default folder 'raw_data' to focus the inspection and curation on
-either new, or revised .svg."""
+The text file is used as input file.  Either -i, or -u as mutually
+exclusive parameters discern between an initial collection of the data,
+deposit in folder 'raw_data', or one to eventually update the already
+curated earlier.  In the later case, data will be written into folder
+'antechamber'.  Like in Python, lines starting by # in the address file
+are skipped like comments.
 
+If running Windows, the script will relay work to the wget program
+(see https://en.wikipedia.org/wiki/Wget).  In Linux, the script aims
+for the more efficient wget2 in first place, and wget as fall back; in
+both cases GNU parallel shall improve the performance by using multiple
+simultaneous download threads."""
+
+
+import argparse
 import os
 import shutil
 import subprocess as sub
@@ -50,6 +52,8 @@ from urllib.parse import unquote
 root = os.getcwd()
 intermediate_register = []
 address_register = []
+register = []  # stores the content of 'wikimedia_addresses.txt'
+
 
 def check_python():
     """Assure the script is used with Python 3, only."""
@@ -60,6 +64,20 @@ def check_python():
         pass
     else:
         print("\nBe sure to call the script with Python 3, only.\n")
+
+
+def file_read():
+    """Transfer content of the input file into a register."""
+    try:
+        with args.inputfile as source:
+            for line in source:
+                register.append(str(line).strip())
+
+    # except Exception:
+    except IOError:
+        print("File not accessible, exit.")
+        sys.exit()
+        #        print(parser.print_usage())
 
 
 def check_raw_data_folder():
@@ -79,11 +97,17 @@ def check_raw_data_folder():
 
 
 def check_antechamber_folder():
-    """Check the presence of folder antechamber; if absent, create it."""
+    """Ensure the presence of an empty folder antechamber."""
     for element in os.listdir("."):
         create = True
         if (str(element) == str("antechamber")) and os.path.isdir(element):
             create = False
+            try:
+                shutil.rmtree(element)
+                os.mkdir("antechamber")
+            except IOError:
+                print("Error to empty folder 'antechamber'.  Exit.")
+                sys.exit()
             break
 
     if create:
@@ -94,80 +118,57 @@ def check_antechamber_folder():
             sys.exit()
 
 
-def read_input_list():
-    """ Retrieve the .svg files listed on Wikimedia's list.
-
-    Read-out of the files' addresses on Wikimedia's servers, relay the
-    decoded string to wget to store local copies.  Report if a string
-    conversion failed in log 'failed_string_conversion.txt'.  It is
-    considered more efficient if Wikimedia's address list is edited to
-    contain two leading comment lines (starting by #) stating the date
-    of their creation rather than their individual storage within the
-    git-managed project."""
-    try:
-        if len(sys.argv[1]) > 1:
-            try:
-                input_file = str(sys.argv[1])
-            except:
-                print("The file was not found.")
-    except:
-        print("\nThe expected input instruction is: \n")
-        print("    python dek_fetch.py [addresslist.txt] \n")
-        sys.exit()
-
-    try:
-        with open(input_file, mode="r") as source:
-            for line in source:
-                intermediate_register.append(str(line).strip())
-    except IOError:
-        print("Unable to read file '{}'.  Exit.".format(input_file))
-        sys.exit()
-
-    # Decode the addresses (back) into UTF-8.
-    for line in intermediate_register:
-        if line.startswith("#") is False:
+def identify_addresses():
+    """Identify the url addresses for the .svg to fetch."""
+    for line in register: #[:20]:  # LIMITED ONLY TO CHECK IF IT WORKS
+        if str(line).startswith("#") is False:
             url = unquote(str(line).strip())
             address_register.append("{}\n".format(url))
-        address_register.sort()
-
-    try:
-        with open("addresslist.txto", mode="w") as newfile:
-            newfile.writelines(address_register)
-    except IOError:
-        print("Error writing intermediate 'addresslist.txto' file.")
-        sys.exit()
+    address_register.sort()
 
 
-def processing_for_windows():
+def processing_for_windows():  # TODO: CHECK IF THIS IS WORKING!
     """Fetch the .svg sequentially with wget in linear fashion.
 
     The wget tool is available for Windows, too.  As a fallback, its
     use is restricted to the already known, previously used linear
     approach; fetching one file at a time.  The Linux analogue of this
-    function, processing_for_linux, will strive for an approach with
-    multiple simultaneous downloads."""
-    with open("addresslist.txto", mode="r") as source:
-        for entry in source:
-            try:
-                command = str("wget -t 21 {}".format(str(entry).strip()))
-                sub.call(command, shell=True)
-            except IOError:
-                print("\nCheck if wget was installed in your system.")
-                print("See, for example, https://en.wikipedia.org/wiki/Wget")
-                print("The script stops here.  Exit.")
-                sys.exit()
+    function, processing_for_linux, aims to fetch the data by multiple
+    simultaneous download threads which overall may be faster."""
 
-    os.remove("addresslist.txto")
+    for address in address_register:
+        try:
+            command = str("wget -t 21 {}".format(str(address).strip()))
+            sub.call(command, shell=True)
+        except IOError:
+            print("\nCheck if wget was installed in your system.")
+            print("See, for example, https://en.wikipedia.org/wiki/Wget")
+            print("The script stops here.  Exit.")
+            sys.exit()
 
 
-def processing_for_linux():
+def processing_for_linux():  # known to work in Linux Debian 10/sid
     """Fetch the .svg with multiple simultaneous instances of wget.
 
-    With xargs, Linux offers to use multiple simultaneous instances of
-    wget which may reduce the time to harvest the data substantially.
-    To prevent a system freeze, a conservative approach is taken using
-    either the one processor is, or one less than the total count of
-    processors available are used."""
+    The initial thought to use Linux' xargs -- following an example on
+
+    https://stackoverflow.com/questions/5546694/parallel-wget-download-url-list-and-rename
+
+    in a pattern like
+
+    cat test.txt | xargs -P 4 wget -nv -t 21
+
+    to pipe the content of file test.txt to run up to four concurrent
+    instances of wget (itself in the non-verbose mode, up to 21 trials
+    to fetch the .svg currently in question) was dropped.  With 21k+,
+    sometimes long addresses might require particular xargs parameters
+    still unfamiliar to mine.
+
+    RegioSQM however showcases "GNU parallel" as an alternative and
+    hence used used instead.  For efficiency in the data transfer, the
+    first attempt is to use wget2, and wget as a fallback.  Note, GNU
+    parallel, wget2, and get may require an explicit installation from
+    the repositories, e.g., Debian 10."""
 
     use_processors = 0
     processors_available = int(len(os.sched_getaffinity(0)))
@@ -179,35 +180,15 @@ def processing_for_linux():
         print("Error determining the number of processors available.  Exit.")
         sys.exit()
 
-    # The instruction is based on
-    # https://stackoverflow.com/questions/5546694/parallel-wget-download-url-list-and-rename
-    #
-    # with the model pattern: cat test.txt | xargs -P 4 wget -nv -t 21
-    #
-    # xargs -P 4: work with up to four simultaneous processes.
-    # wget -nv -t 21: use wget's non-verbose report to the CLI (lists
-    #    only date, time, address, file name of fetched file) and try
-    #    up to 21 times to fetch the .svg currently in question.
-    #
-    # For efficiency, Linux' first attempt is to call wget2.  If this
-    # fails, wget serves as fallback.
+    try:
+        with open("addresslist.txto", mode="w") as newfile:
+            for address in address_register:
+                retain = str(address).strip()
+                newfile.write("{}\n".format(retain))
+    except IOError:
+        print("Error writing intermediate 'addresslist.txto'.  Exit.")
+        sys.exit()
 
-#    try:
-#        command = str(
-#            "cat addresslist.txto | xargs -0 -P {} wget2 -nv -t 21".format(use_processors))
-#        sub.call(command, shell=True)
-#    except IOError:
-#        print("Problem using wget2; attempt using slower wget instead.")
-#        try:
-#            command = str(
-#                "cat addresslist.txto | xargs -0 -P {} wget2 -nv -t 21".format(
-#                    use_processors))
-#            sub.call(command, shell=True)
-#        except IOError:
-#            print("Linux based xargs/wget fetch of the data failed.  Exit.")
-#            sys.exit()
-#
-#    os.remove("addresslist.txto")
 
 # known to work -- faster, start:
     try:
@@ -215,77 +196,32 @@ def processing_for_linux():
         sub.call(command, shell=True)
     except IOError:
         print("parallel/wget2 failed.  Exit")
-    # known to work, end.
-    
+        # known to work, end.
+
         # known to work, not as fast, start:
         try:
             command = str("cat addresslist.txto | parallel -j4 'wget {}'")
             sub.call(command, shell=True)
         except IOError:
             print("parallel/wget failed.  Exit")
-        # exit method not as fast.
+            # exit method not as fast.
 
             # the linear method / slow:
             # known to work, start:
             with open("addresslist.txto", mode="r") as source:
                 for entry in source:
                     try:
-                        command = str("wget2 -t 21 {}".format(str(entry).strip()))
+                        command = str("wget2 -t 21 {}".format(
+                            str(entry).strip()))
                         sub.call(command, shell=True)
                     except IOError:
                         print("\nCheck if wget was installed in your system.")
-                        print("See, for example, https://en.wikipedia.org/wiki/Wget")
+                        print(
+                            "See, for example, https://en.wikipedia.org/wiki/Wget"
+                        )
                         print("The script stops here.  Exit.")
                         sys.exit()
                     # known to work, end.
-
-def define_svg_harvest():
-    """Select Windows/Linux and type of .svg deposit.
-
-    It is preferred to use the script in Linux, where fetching the
-    data is eased by wget2 (fallback: wget) to retrieve the data, and
-    xargs to parallelize this.  For Windows and MacOS (not tested),
-    wget is available, too but its call is not parallelized here.
-
-    Fetching the data discerns between either the initial harvest (->
-    folder 'raw_data', generated on the fly) and an eventually update
-    of the data (-> folder antechamber)."""
-
-    print("\nSelect if fetching the data either is")
-    print("[1]    the initial collection of the .svg, or")
-    print("[2]    intends an update of the raw .svg.")
-    print("[q]    Exit the script whatsoever.")
-    choice = input("\nyour choice: ")
-
-    if str(choice) == str(1):
-        check_raw_data_folder()
-        shutil.copy("addresslist.txto", "raw_data")
-        os.chdir("raw_data")
-
-        if str(sys.platform).lower().startswith("lin"):
-            processing_for_linux()
-        elif str(sys.platform).lower().startswith("win") or str(
-                sys.platform).lower().startswith("darwin"):
-            processing_for_windows()
-        else:
-            print("This operating system is currently not supported.")
-
-    if str(choice) == str(2):
-        check_antechamber_folder()
-        shutil.copy("addresslist.txto", "antechamber")
-        os.chdir("antechamber")
-
-        if str(sys.platform).lower().startswith("lin"):
-            processing_for_linux()
-        elif str(sys.platform).lower().startswith("win") or str(
-                sys.platform).lower().startswith("darwin"):
-            processing_for_windows()
-        else:
-            pass
-
-    if (str(choice).lower() == str("q")) or (str(choice) not in ["1", "2"]):
-        print("\nThe script stops here.  Exit.\n")
-        sys.exit()
 
 
 def cleaning():
@@ -298,13 +234,55 @@ def cleaning():
         pass
 
 
-def main():
-    """ Join the functions. """
-    check_python()
-    read_input_list()
-    define_svg_harvest()
+# clarifications for argparse, start:
+parser = argparse.ArgumentParser(
+    description='file fetcher for Wikimedia .svg about DEK')
+parser.add_argument(
+    'inputfile',
+    type=argparse.FileType('r'),
+    help='Input text file, typically "wikimedia_addresses.txt"')
 
-    cleaning()
+group = parser.add_mutually_exclusive_group(required=True)
+group.add_argument('-i',
+                   '--initial',
+                   action='store_true',
+                   help='initial fetch of the .svg data')
+group.add_argument('-u',
+                   '--update',
+                   action='store_true',
+                   help='update fetch of the .svg data')
+
+args = parser.parse_args()
+# clarifications for argparse, end.
 
 if __name__ == "__main__":
-    main()
+    file_read()
+    if args.initial:
+        print("aim for an initial fetch of the data.")
+        check_raw_data_folder()
+    elif args.update:
+        print("aim to update already existing data.")
+        check_antechamber_folder()
+    identify_addresses()
+
+    if args.initial:
+        os.chdir("raw_data")
+        if sys.platform.startswith("win"):
+            processing_for_windows()
+        elif sys.platform.startswith("lin"):
+            processing_for_linux()
+        else:
+            print(
+                "Currently, your OS is not supported.  Try Linux or Windows.")
+            sys.exit()
+
+    if args.update:
+        os.chdir("antechamber")
+        if sys.platform.startswith("win"):
+            processing_for_windows()
+        elif sys.platform.startswith("lin"):
+            processing_for_linux()
+        else:
+            print(
+                "Currently, your OS is not supported.  Try Linux or Windows.")
+            sys.exit()
