@@ -1,39 +1,36 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
-
 # name:    dek_csv.py
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:    2020-09-11 (YYYY-MM-DD)
+# edit:    2020-09-16 (YYYY-MM-DD)
 #
-"""Extend dek_quick_csv.py's relational table dek2anki.csv.
+""" Consolidation of dek_quick_csv.py's dek2anki.csv relational table.
 
-File dek2anki.csv, previously written by dek_quick_csv_3.py, relates
-key and file name of the .svg considered for an Anki deck.  This table
-is now extended by a third column in a pattern of
+The content of file dek2anki.csv, written by script dek_quick_csv.py,
+is extended by this script with tags in a third column.  Eventually,
+the lines in this relational table follow a pattern of
 
 Aufstand; <img src="DEK_VS_steno_svg_-_Aufstand.svg">; DEK_b auf st
 
-While "Aufstand" is the key to the specific file, tags from the third
-column add context to multiple files.  For one, "DEK_b" applied to all
-.svg of this project allows their study simultaneously to other Anki
-decks by other authors already available.  Equally, .svg may be tagged
+to relate a key (here, "Auftstand"), with the address of the .svg file
+(second column), and tags about this entry (third column).  To allow a
+parallel use of either this project's Anki deck or others, each entry
+is tagged by "DEK_b".  To ease self study, additional tags may be set,
+too.  At present, this approach is based on the comparison of strings
+in the file name,
 
 + to indicate entries contrasting symbolizations like the illustration
   of Automaten_ABER_Automatten.svg.
 
 + to indicate the _possible_ occurence of a symbolization about groups
-  of consonants, or whole syllabels.  This identification, and the
-  discern of symbolizations e.g., of "mp" but not "mpf", "dr" but not
-  "ndr" is at an experimental stage and is based on a naive comparison
-  of strings.  Occasionally, the analysis of syllables complement the
-  guess.  Only a subset of DEK's 100 kuerzel and some of the consonant
-  groups are searched.  It is known that this simple approach equally
-  yields "false positives" suggesting the presence of a particular
-  symbolization, which however would not not correspond to the rules
-  (e.g., Bausparer does not use the symbolization of "aus").  It is
-  the intent to improve the attribution gradually.
+  of vowels, or whole syllabels.  This identification, and the discern
+  of symbolizations e.g., of "mp" but not "mpf", "dr" but not "ndr" is
+  at an experimental stage.  At present, not all 100 kuerzel, nor all
+  vowel symbolizations are known to the set of rules here.  Equally it
+  is known that this simple approach equally yields "false positives"
+  suggesting the presence of a special symbolization, than there is
+  none (e.g., Bausparer does not use the symbolization of "aus").  It
+  is the intent to improve the attribution gradually.
 
 Again, because Anki expects an .csv in UTF-8 and because of the use of
 special characters like umlauts, the scripts action, launched on the
@@ -41,18 +38,18 @@ the CLI by
 
 python dev_csv.py
 
-is restricted to Python 3 one level above folder 'dek_workshop'. """
+is restricted to Python 3. """
 
 import os
 import shutil
 import sys
 
-from hyphen import Hyphenator  # see https://pypi.org/project/PyHyphen/
+from hyphen import Hyphenator
 h_de = Hyphenator('de_DE')
 
 
 def check_python():
-    """Assure the script is used with Python 3, only."""
+    """ Assure the script is used with Python 3, only. """
     if sys.version_info[0] == 2:
         print("\nThe script works with Python 3, only.\n")
         sys.exit()
@@ -63,7 +60,7 @@ def check_python():
 
 
 def only_check_presence_workshop():
-    """Probe for te presence of folder 'dek_workshop'."""
+    """ This time, only probe if there is folder dek_workshop. """
     presence_raw_data = False
     for element in os.listdir("."):
         if (str(element) == str("dek_workshop")) and os.path.isdir(element):
@@ -75,7 +72,7 @@ def only_check_presence_workshop():
 
 
 def remove_from_list():
-    """Remove files deemed incompatible to the Anki deck format."""
+    """ Remove files deemed incompatible to the Anki deck format. """
     root = os.getcwd()
     old_register = []
     new_register = []
@@ -205,11 +202,17 @@ def remove_from_list():
     black_list = black_list + empty_files + names_women + names_men
 
     os.chdir("dek_workshop")
+    global comment_lines
+    comment_lines = []
     try:
         with open("dek2anki.csv", mode="r") as source:
             for line in source:
-                if str(line).startswith("#") is False:
-                    old_register.append(str(line).strip())
+                if str(line).startswith("#"):
+                    retain = str(line).strip()
+                    comment_lines.append(retain)
+                elif str(line).startswith("#") is False:
+                    retain = str(line).strip()
+                    old_register.append(retain)
 
     except IOError:
         print("\nFile 'dek2anki.csv' is inaccessible.")
@@ -218,6 +221,7 @@ def remove_from_list():
 
     for line in old_register:
         global check
+        check = str(line).strip()  # remove, e.g. line feed
         check = check.split(";")[0]  # identify the easier to use key
         if (check in black_list) or (len(str(check)) > 70):
             pass
@@ -228,6 +232,9 @@ def remove_from_list():
             new_register.append(retain)
 
     with open("dek2anki.csv", mode="w") as newfile:
+        for comment in comment_lines:
+            newfile.write("{}\n".format(comment))
+
         for entry in new_register:
             retain = str("{}\n".format(entry))
             newfile.write(retain)
@@ -397,5 +404,4 @@ def main():
     remove_from_folder()
 
 
-if __name__ == "__main__":
-    main()
+main()
