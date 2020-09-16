@@ -1,33 +1,51 @@
-# name:    dek_quick_csv.py
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 # author:  nbehrnd@yahoo.com
-# license:
+# license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:
+# edit:    2020-09-15 (YYYY-MM-DD)
 #
-""" A quick generation of an Anki compatible relational .csv table.
+"""Quick generation of a minimal relational .csv table for Anki.
 
-This script creates a minimal form of the relational table between the
-keys and the corresponding images Anki must read once to build its own
-database.  Thus, by action of
+The programmatic generation of an Anki deck requires a text file to
+relate the file names of the DEK .svg to consider with a keyword.  By
+this script, this minimal information is stored in a permanent record.
 
-python deck_quick_csv.py
+Deposit this script one level above the folder 'raw_data' (working to
+create the Anki deck for the first time) and 'antechamber' (present if
+eventually updating an already existing Anki deck).  From the CLI of
+Python 3, launch the script by
 
-with Python 3 (Anki allows only UTF-8 encoded relational tables, and
-there are special characters like umlauts, too), file csv2anki.csv is
-written.  The two columns are separated by semi-colon in a pattern of
+python deck_quick_csv.py [-i | -u]
+
+with mandatory provision of either parameter -i (for an initial fetch
+of .svg) or -u (to update an already existing set of .svg / Anki deck).
+
+The newly written file 'csv2anki.csv' retains for each file a 'key'
+and a 'file name', separated by a semicolon in the pattern of
 
 A-Saite; <img src="DEK_VS_steno_svg_-_A-Saite.svg">
 
-This file is processed further by dek_csv_4 because it is possible to
-add tags to the entries allowing a more specific training in an Anki
-session, too. """
+Anki permits only UTF-8 encoded relational tables and some file names
+contain special characters (e.g., umlauts).  Thus, the script's action
+is constrained to Python 3.
 
+Because file 'csv2anki.csv' actually is used as mandatory parameter by
+script dek_csv4.py to extend the file indexing, file 'csv2anki.csv' is
+deposited both in the folder of 'raw_data' / 'antechamber' as well as
+their sub-subfolders 'dek_workshop' where it will be accessed again."""
+
+import argparse
 import os
+import shutil
 import sys
+
+from datetime import date
 
 
 def check_python():
-    """ Assure the script is used with Python 3, only. """
+    """Assure the script is used with Python 3, only."""
     if sys.version_info[0] == 2:
         print("\nThe script works with Python 3, only.\n")
         sys.exit()
@@ -38,7 +56,7 @@ def check_python():
 
 
 def only_check_presence_workshop():
-    """ This time, only probe if there is folder dek_workshop. """
+    """Probe the presence of folder 'dek_workshop'."""
     presence_raw_data = False
     for element in os.listdir("."):
         if (str(element) == str("dek_workshop")) and os.path.isdir(element):
@@ -50,15 +68,16 @@ def only_check_presence_workshop():
 
 
 def create_csv():
-    """ Write relational table csv2anki.csv about keys and images. """
+    """Write relational table csv2anki.csv about keys and images."""
     file_register = []
     csv_register = []
+    root = str(os.getcwd())
     os.chdir("dek_workshop")
 
     for file in os.listdir("."):
         if file.endswith(".svg"):
             file_register.append(file)
-    file_register.sort()
+    file_register.sort(key=str.lower)
 
     for entry in file_register:
         file_name = str(entry)
@@ -69,17 +88,58 @@ def create_csv():
         retain = str('{}; <img src="{}">'.format(keyword, file_name))
         csv_register.append(retain)
 
-    with open("dek2anki.csv", mode="w") as newfile:
-        for record in csv_register:
-            keep = str("{}\n".format(record))
-            newfile.write(keep)
+    try:
+        with open("dek2anki.csv", mode="w") as newfile:
+            today = date.today()
+            header = str("# file: dek2anki.csv\n")
+            header += str("# date: {} (YYYY-MM-DD)\n".format(today))
+            header += str("# data: {}\n#\n".format(len(csv_register)))
+            newfile.write(header)
+
+            for record in csv_register:
+                keep = str("{}\n".format(record))
+                newfile.write(keep)
+    except IOError:
+        print("Error writing file 'dek2anki.csv'.  Exit.")
+        sys.exit()
+
+    try:
+        table_old_place = os.path.join(str(os.getcwd()), str("dek2anki.csv"))
+        table_new_place = os.path.join(root, str("dek2anki.csv"))
+        shutil.copy(table_old_place, table_new_place)
+    except IOError:
+        print("Error copying file 'dek2anki.csv' from 'dek_workshop'.")
+        sys.exit()
+
+    print("File 'dek2anki.csv' was written.")
 
 
-def main():
-    """ Joining the functions. """
+# clarifications for argparse, start:
+parser = argparse.ArgumentParser(
+    description='Write an initial dek2Anki.csv for Wikimedia .svg about DEK (no tags)')
+
+group = parser.add_mutually_exclusive_group(required=True)
+group.add_argument('-i',
+                   '--initial',
+                   action='store_true',
+                   help='on all, including initial fetch of the .svg data')
+group.add_argument('-u',
+                   '--update',
+                   action='store_true',
+                   help='only on data contributing to an update of the .svg')
+
+args = parser.parse_args()
+# clarifications for argparse, end.
+
+if __name__ == "__main__":
     check_python()
-    only_check_presence_workshop()
-    create_csv()
+    if args.initial:
+        print("work on the earlier / initial fetch of the .svg data")
+        only_check_presence_workshop()
+        create_csv()
 
-
-main()
+    elif args.update:
+        print("work only on data contributing to an update of the .svg")
+        os.chdir("antechamber")
+        only_check_presence_workshop()
+        create_csv()

@@ -2,7 +2,7 @@
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:    2020-06-07 (YYYY-MM-DD)
+# edit:    2020-09-16 (YYYY-MM-DD)
 #
 """ Consolidation of dek_quick_csv.py's dek2anki.csv relational table.
 
@@ -202,9 +202,18 @@ def remove_from_list():
     black_list = black_list + empty_files + names_women + names_men
 
     os.chdir("dek_workshop")
+    global comment_lines
+    comment_lines = []
     try:
         with open("dek2anki.csv", mode="r") as source:
-            old_register = source.readlines()
+            for line in source:
+                if str(line).startswith("#"):
+                    retain = str(line).strip()
+                    comment_lines.append(retain)
+                elif str(line).startswith("#") is False:
+                    retain = str(line).strip()
+                    old_register.append(retain)
+
     except IOError:
         print("\nFile 'dek2anki.csv' is inaccessible.")
         print("Maybe a run of dek_quick_csv.py solves this issue.\n")
@@ -223,6 +232,9 @@ def remove_from_list():
             new_register.append(retain)
 
     with open("dek2anki.csv", mode="w") as newfile:
+        for comment in comment_lines:
+            newfile.write("{}\n".format(comment))
+
         for entry in new_register:
             retain = str("{}\n".format(entry))
             newfile.write(retain)
