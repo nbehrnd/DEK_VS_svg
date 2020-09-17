@@ -1,6 +1,6 @@
 * Hintergrund
 
-  Wikimedia enthält mehr als 20 Tausend Illustrationen zur
+  Wikimedia enthält mehr als 26 Tausend Illustrationen zur
   Verkehrsschrift, der ersten Stufe der Vereinfachung der [[https://de.wikipedia.org/wiki/Deutsche_Einheitskurzschrift][Deutschen
   Einheitskurzschrift]].  Nutzer [[https://commons.wikimedia.org/wiki/User:Thirunavukkarasye-Raveendran][Thirunavukkarasye-Raveendran]], der nicht
   der Autor dieses Projektes ist, stellt diese frei als /public
@@ -53,15 +53,15 @@
   Moderiert von einem bash script nutzt dieses Projekt [[https://github.com/RazrFalcon/svgcleaner][svgcleaner]], um
   die Vektorabbildungen erheblich zu vereinfachen, ohne ihre
   Lesbarkeit während einer Sitzung mit Anki merklich zu
-  beeinträchtigen.  Auf diese Weise kann etwa eine Sammlung von
-  21148 Abbildungen (30. Mai 2020) auf etwa 30 MByte reduziert werden
-  (original: 144 MByte).
+  beeinträchtigen.  Auf diese Weise kann etwa eine Auswahl von
+  25944 Abbildungen (17. September 2020) auf etwa 34 MByte reduziert werden
+  (original: 105 MByte).
 
   Während branch =master= die Werkzeuge zur Vorbereitung des Anki
   decks enthält, dient branch =release_decks= ausschließlich zur
   Aufnahme der dann in Anki erstellten decks.  Die releases enthalten
   ausschließlich die aktuellen decks, dank nochmaliger Kompression
-  etwa 15 MByte.
+  etwa 20 MByte.
 
 * Nutzung
 
