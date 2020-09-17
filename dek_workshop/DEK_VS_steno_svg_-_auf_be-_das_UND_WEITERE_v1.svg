@@ -1,0 +1,119 @@
+<svg height="400mm" viewBox="0 0 2126 1417.3" width="600mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round" stroke-miterlimit="2.5" transform="translate(0 364.96062)">
+  <path d="m28.4-72.8h2057.5" stroke="#969696" stroke-width="1.875"/>
+  <g stroke="#000" stroke-dasharray="11.25 11.25" stroke-width=".9375">
+   <path d="m27.9 28.3h2057.5"/>
+   <path d="m27.9-173.9h2057.5"/>
+   <path d="m27.9-275h2057.5"/>
+  </g>
+  <path d="m28.4 371.4h2057.5" stroke="#969696" stroke-width="1.875"/>
+  <g stroke="#000" stroke-dasharray="11.25 11.25" stroke-width=".9375">
+   <path d="m27.9 472.5h2057.5"/>
+   <path d="m27.9 270.3h2057.5"/>
+   <path d="m27.9 169.2h2057.5"/>
+  </g>
+  <path d="m28.4 829.7h2057.5" stroke="#969696" stroke-width="1.875"/>
+  <g stroke="#000" stroke-dasharray="11.25 11.25" stroke-width=".9375">
+   <path d="m27.9 930.8h2057.5"/>
+   <path d="m27.9 728.6h2057.5"/>
+   <path d="m27.9 627.5h2057.5"/>
+  </g>
+ </g>
+ <g transform="translate(0 673.22834)">
+  <g fill="none" stroke-linecap="round" stroke-width="5.625">
+   <g stroke-linejoin="round">
+    <g stroke="#000">
+     <path d="m270.8-480.3-42.4 73.1c-14.1 24.3 28.4 36.7 50.1-1.5"/>
+     <path d="m434.3-431.3c41.3 3.1 61.8-37.1 58.5-45.8-2.9-7.5-30.3-4.4-54.9 36.2-47.2 77.3-2.2 60.6 29.7 33.8"/>
+     <path d="m586.8-557.8c15.9-32 75.6-30.6 48.2 3.3s-45.5 50.2-39.4 63.9c6 13.7 39.8-.4 52.1-17.9"/>
+     <path d="m756.1-484.2c9.1-14.3 24-29.1 35.5-30 24.4-1.9 21.5 28.5 44.3 29.1 11 .3 20.8-7.4 28.9-16.9"/>
+     <path d="m981.3-533.9 21.1 48.8"/>
+    </g>
+    <path d="m1191.4-482.3c-53.2 7.3-100.2 80.3-96.4 92.6.9 3 16.3 22.9 59.8-38.1 26.9-36.9 54.6-73.4 69.3-116.4 15.5-30.1-1.4-56.7-44.4-11.6" stroke="#060000"/>
+    <path d="m1286.1-424.8-22 40.6" stroke="#000"/>
+    <path d="m1442.8-424.8 18.8 40.2" stroke="#000"/>
+   </g>
+   <path d="m1863.5-425.7-54 41" stroke="#000"/>
+   <g stroke-linejoin="round">
+    <path d="m1642.1-425.2 18.8 40.2" stroke="#000"/>
+    <path d="m47-383.7c11.3-3.6 29-14.3 32.2-40.1s20.9-53.1 39.1-55.8" stroke="#060000"/>
+    <path d="m2015.7-480.3c54.3-11 95.5-79.5 89.2-96.2-5.5-14.4-40.2 8.9-87.4 86.8-69.6 120.2-36 123.1 7.3 84" stroke="#000"/>
+    <path d="m545.7 26.8 33.9-16-27.4 48.9" stroke="#000"/>
+    <path d="m674.3 28.5 33.9-16-27.4 48.9 33.8-15.1" stroke="#000"/>
+   </g>
+  </g>
+  <path d="m834.2-49.2a11.6 11.6 0 0 1 -11.6 11.6 11.6 11.6 0 0 1 -11.6-11.6 11.6 11.6 0 0 1 11.6-11.7 11.6 11.6 0 0 1 11.7 11.6"/>
+  <g fill="none" stroke-linecap="round">
+   <path d="m981.8 59.5c22.1-28.8 37.7-44.2 57.6-45.7 24.9-1.8 43.4 16.3 35.9 46.3" stroke="#000" stroke-linejoin="round" stroke-width="5.625"/>
+   <path d="m1349.4-136.7-102.7 196.5" stroke="#000" stroke-width="5.625"/>
+   <g stroke-linejoin="round">
+    <g stroke="#000">
+     <path d="m1624.9 61.4 19.1-40.2-225.5 39" stroke-width="5.625"/>
+     <path d="m1758.8-73.9 33.7-15.9-27.3 48.5 33.6-15" stroke-width="5.590072"/>
+     <g stroke-width="5.625">
+      <path d="m1905 60.8 192.1-1.4"/>
+      <path d="m161.6 415.4-69.2.5"/>
+      <path d="m639 478.3c-48.2 61.4-98.5 47.1-84.7-.3"/>
+      <path d="m1695 423c-20.7 13.1-39.8 29.6-43.9 67.8-.2 32.4 51.2 27.2 69.1 26.8 19.5-.5 58.4-5.4 74.6-12.6"/>
+      <path d="m833.6 469.6s-29.5 9.7-39.1 14.8c-8 4.3-17.6 13.1-16.7 21.6.8 7.1 2.3 12.8 13.7 13.1 15.8.4 47.4-44.7 52.6-82 5.7-40.6 49-104.9 84.7-115.1"/>
+      <path d="m1046.1 518.7c24.5-1.3 54.9-44.7 60.1-82 5.7-40.6 44.3-104.4 80-114.7"/>
+     </g>
+     <g transform="translate(-166.68904 -298.11988)">
+      <path d="m507.2 358c3 .3 9.7-4.3 11-5 48.9-28.1 71.8-129.9 9.4-74.1-2.3 2.1-17.4 18.4-20 21" stroke-width="5.431898"/>
+      <g stroke-width="5.638243">
+       <path d="m562 266.6c-.7 31-18.1 61.6-38.1 82.5"/>
+       <path d="m564.5 268.9c5.2 34.8-19.9 69.4-45 83.3"/>
+       <path d="m557.2 265.3c3.6 34.1-21.2 69-37.7 86.9"/>
+      </g>
+      <g stroke-width="2.819121">
+       <path d="m549.8 265c7.9-3.1 5.9 10.5 5.9 15.9"/>
+       <path d="m526.1 342.4c-5.5 6.9-9.4 9.8-15.3 13.2"/>
+      </g>
+     </g>
+     <path d="m53.4-11.4c24.3-33 69.8-34.2 37.2 20l-31.1 51.6" stroke-width="5.625"/>
+    </g>
+    <g stroke-width="5.625">
+     <path d="m59.5 60.2s49.1-67.4 80.8-87.2c3.5-2.1 7.1-4 11-5.7 19.6-8.3 35 2.5 12.3 40.5l-31.3 52.4" stroke="#000008"/>
+     <path d="m1539.4 475.3c-139.3 61.4-241.3 51.2-244.9-.3" stroke="#000"/>
+     <path d="m1941.3 494.4 58.8-48.8" stroke="#120000"/>
+     <path d="m1992.1 518c11.2-27.4-9.2-38.1-20.9-44.2-32.6-16.9-29.7-38.2-22.8-51.3" stroke="#120000"/>
+    </g>
+   </g>
+  </g>
+  <g font-family="Arial" font-size="80" letter-spacing="0" stroke-width=".9375" word-spacing="0">
+   <text x="16.327549" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="16.327549" y="-276.5491">auf</tspan></text>
+   <text x="199.11009" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="199.11009" y="-276.5491">be-</tspan></text>
+   <text x="369.28781" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="369.28781" y="-276.5491">das</tspan></text>
+   <text x="541.68311" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="541.68311" y="-276.5491">dem</tspan></text>
+   <text x="739.72406" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="739.72406" y="-276.5491">den</tspan></text>
+   <text x="934.16302" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="934.16302" y="-276.5491">der</tspan></text>
+   <text x="1211.931" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1211.931" y="-276.5491">die</tspan></text>
+   <text x="1419.2524" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1419.2524" y="-276.5491">er</tspan></text>
+   <text x="1608.6274" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1608.6274" y="-276.5491">er-</tspan></text>
+   <text x="1797.1989" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1797.1989" y="-276.5491">es</tspan></text>
+   <text x="1068.6589" y="-603.75854"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1068.6589" y="-603.75854">deutsch</tspan></text>
+   <text x="1964.8978" y="-276.5491"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1964.8978" y="-276.5491">für</tspan></text>
+   <text x="493.33026" y="196.95993"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="493.33026" y="196.95993">ich</tspan></text>
+   <text x="657.59741" y="196.95993"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="657.59741" y="196.95993">in</tspan></text>
+   <text x="791.41241" y="196.95993"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="791.41241" y="196.95993">ist</tspan></text>
+   <text x="934.04071" y="196.95993"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="934.04071" y="196.95993">kann</tspan></text>
+   <text x="1170.2173" y="196.95993"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1170.2173" y="196.95993">nicht</tspan></text>
+   <text x="1425.1982" y="196.95993"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1425.1982" y="196.95993">ohne</tspan></text>
+   <text x="290.95242" y="196.95993"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="290.95242" y="196.95993">hat</tspan></text>
+   <text x="1707.8556" y="196.95993"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1707.8556" y="196.95993">sind</tspan></text>
+   <text x="1978.4885" y="200.55058"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1978.4885" y="200.55058">so</tspan></text>
+   <text x="50.875641" y="668.08667"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="50.875641" y="668.08667">und</tspan></text>
+   <text x="511.96814" y="668.08667"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="511.96814" y="668.08667">ver-</tspan></text>
+   <text x="721.23657" y="668.08667"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="721.23657" y="668.08667">vom</tspan></text>
+   <text x="1004.8401" y="668.08667"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1004.8401" y="668.08667">von</tspan></text>
+   <text x="1662.5632" y="668.08667"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1662.5632" y="668.08667">wo</tspan></text>
+  </g>
+  <path d="m402.8 519.6c5.8-3.7 12.8-11.7 7.1-19-2.8-3.6-4.4-5-13-4.9l-107.7.6c-7.4 0-15.4-.2-17.4-.8-9.6-2.9-8.5-13.1.2-25.1" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.625"/>
+  <g font-family="Arial" font-size="80" letter-spacing="0" stroke-width=".9375" word-spacing="0">
+   <text x="301.41663" y="668.08667"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="301.41663" y="668.08667">ur</tspan></text>
+   <text x="20.423859" y="199.3127"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="20.423859" y="199.3127">gegen</tspan></text>
+   <text x="1910.8279" y="668.08667"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1910.8279" y="668.08667">über</tspan></text>
+   <text x="1327.9189" y="668.08667"><tspan font-family="Arial" font-size="80" stroke-width=".9375" x="1327.9189" y="668.08667">vor-</tspan></text>
+  </g>
+ </g>
+</svg>

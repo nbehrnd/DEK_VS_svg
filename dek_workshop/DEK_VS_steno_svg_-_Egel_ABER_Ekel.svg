@@ -1,0 +1,22 @@
+<svg height="210mm" viewBox="0 0 1052.4 744.1" width="297mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round" transform="translate(0 -308.26772)">
+  <path d="m57.6 742.2h948.8" stroke="#969696" stroke-width="1.875"/>
+  <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+   <path d="m58.3 844.1h948.8"/>
+   <path d="m58.3 641.8h948.8"/>
+   <path d="m58.3 540.6h948.8"/>
+  </g>
+ </g>
+ <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m759.8 431.5 25.7-.3" stroke-width="5.625"/>
+  <ellipse cx="865.53424" cy="-230.17432" rx="4.609393" ry="6.862875" stroke-width="5.625" transform="matrix(.72846687 .68508103 -.68508103 .72846687 0 0)"/>
+  <path d="m646.1 431c32.4-39.4 74.3-52.8 95.8-46.2 16.1 4.9 25.5 20.6 17.9 46.8" stroke-width="5.624999"/>
+  <g stroke-width="5.625">
+   <path d="m337.4 431.8 42.5-.2"/>
+   <path d="m269.3 430.8c27.1-38.3 54.8-83.4 74.4-91.5 4.4-1.9 8.6-2.9 12.4-3.1 6.3-.3 11.5 1.7 14.3 6.4 4.2 6.9 3.2 18.4-6.9 37.2l-27.6 51.9"/>
+   <ellipse cx="569.8457" cy="48.099541" rx="4.609393" ry="6.862875" transform="matrix(.72846687 .68508103 -.68508103 .72846687 0 0)"/>
+  </g>
+ </g>
+ <circle cx="526.66071" cy="361.61389" r="10.653956"/>
+ <circle cx="511.27106" cy="410.62952" r="10.653956"/>
+</svg>

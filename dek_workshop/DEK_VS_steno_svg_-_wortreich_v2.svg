@@ -1,0 +1,41 @@
+<svg height="210mm" viewBox="0 0 1052.4 744.1" width="297mm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="6525.5449" x2="6149.6719" y1="36928.09" y2="37482.008">
+  <stop offset="0"/>
+  <stop offset="1" stop-opacity="0"/>
+ </linearGradient>
+ <g stroke-linecap="round">
+  <g fill="none" transform="translate(0 -308.26772)">
+   <path d="m57.6 742.2h948.8" stroke="#969696" stroke-width="1.875"/>
+   <g stroke="#000" stroke-dasharray="3.75 7.5" stroke-miterlimit="2" stroke-width=".9375">
+    <path d="m58.3 844.1h948.8"/>
+    <path d="m58.3 641.8h948.8"/>
+    <path d="m58.3 540.6h948.8"/>
+   </g>
+  </g>
+  <g stroke="#000" stroke-width="5.625">
+   <g fill="none">
+    <path d="m194.4 336.2c-40.3 12.4-79.3 77.9-61.1 91.1 7.4 6.3 22.1 3.9 44.3.5 35.4-5.3 193.9-42.6 193.9-42.6" stroke-linejoin="round"/>
+    <path d="m497.2 234.4-103.6 196.7"/>
+    <g stroke-linejoin="round">
+     <path d="m371.5 385.1 22.1 45.9"/>
+     <path d="m497.2 234.4 20.9 43.8"/>
+     <path d="m518.1 278.2c350.3-219 361.3-226.3 378.7-235.4 11.2-5.9 18.6-8 23.1-9.1 3.5-.8 6.6-1.1 9.3-1.1 7.2.1 11.8 3 14.2 8 7.2 15.3-6.2 50.9-28.6 90.5-26.3 44.8-62.9 88.9-90.3 97.3"/>
+    </g>
+   </g>
+   <g fill="url(#a)" fill-rule="evenodd" transform="translate(-5336.5441 -37027.002)">
+    <path d="m5438.4 37160.80000000001-62.7 322.7"/>
+    <g stroke-linejoin="round">
+     <path d="m5438.4 37160.80000000001h58.1"/>
+     <path d="m5375.7 37483.5h58.1"/>
+    </g>
+   </g>
+   <g fill="none" transform="translate(-5167.7382 -37027.002)">
+    <path d="m6212.4 37159.30000000001-62.7 322.7"/>
+    <g stroke-linejoin="round">
+     <path d="m6154.2 37159.30000000001h58.1"/>
+     <path d="m6091.5 37482h58.1"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

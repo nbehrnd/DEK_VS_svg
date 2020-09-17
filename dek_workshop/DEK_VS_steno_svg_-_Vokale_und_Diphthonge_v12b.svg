@@ -1,0 +1,148 @@
+<svg height="400mm" viewBox="0 0 2232.3 1417.3" width="630mm" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-linecap="round" stroke-miterlimit="2.5" transform="translate(0 364.96062)">
+  <path d="m28.4-72.8h2182.8" stroke="#969696" stroke-width="1.875"/>
+  <g stroke="#000" stroke-dasharray="11.25 11.25" stroke-width=".9375">
+   <path d="m27.9 28.3h2182.8"/>
+   <path d="m27.9-173.9h2182.8"/>
+   <path d="m27.9-275h2182.8"/>
+  </g>
+  <path d="m28.4 371.4h2182.8" stroke="#969696" stroke-width="1.875"/>
+  <g stroke="#000" stroke-dasharray="11.25 11.25" stroke-width=".9375">
+   <path d="m27.9 472.5h2182.8"/>
+   <path d="m27.9 270.3h2182.8"/>
+   <path d="m27.9 169.2h2182.8"/>
+  </g>
+  <path d="m28.4 829.7h2182.8" stroke="#969696" stroke-width="1.875"/>
+  <g stroke="#000" stroke-dasharray="11.25 11.25" stroke-width=".9375">
+   <path d="m27.9 930.8h2182.8"/>
+   <path d="m27.9 728.6h2182.8"/>
+   <path d="m27.9 627.5h2182.8"/>
+  </g>
+ </g>
+ <g transform="translate(0 673.22834)">
+  <g font-family="Arial" letter-spacing="0" stroke-width=".9375" word-spacing="0">
+   <g font-size="89.999992">
+    <text x="279.85068" y="-281.88776"><tspan font-family="Arial" font-size="89.999992" stroke-width=".9375" x="279.85068" y="-281.88776">i</tspan></text>
+    <text x="801.14294" y="-281.88776"><tspan font-family="Arial" font-size="89.999992" stroke-width=".9375" x="801.14294" y="-281.88776">ü</tspan></text>
+    <text x="1453.2871" y="-281.88776"><tspan font-family="Arial" font-size="89.999992" stroke-width=".9375" x="1453.2871" y="-281.88776">ei</tspan></text>
+    <text x="2077.9084" y="-281.88776"><tspan font-family="Arial" font-size="89.999992" stroke-width=".9375" x="2077.9084" y="-281.88776">ä</tspan></text>
+   </g>
+   <g font-size="89.999985">
+    <text x="246.90912" y="161.16757"><tspan font-family="Arial" font-size="89.999985" stroke-width=".9375" x="246.90912" y="161.16757">e</tspan></text>
+    <text x="768.40668" y="161.16757"><tspan font-family="Arial" font-size="89.999985" stroke-width=".9375" x="768.40668" y="161.16757">a</tspan></text>
+    <text x="1415.0773" y="161.16757"><tspan font-family="Arial" font-size="89.999985" stroke-width=".9375" x="1415.0773" y="161.16757">o</tspan></text>
+    <text x="2083.2581" y="161.16757"><tspan font-family="Arial" font-size="89.999985" stroke-width=".9375" x="2083.2581" y="161.16757">ö</tspan></text>
+    <text x="228.76645" y="670.36121"><tspan font-family="Arial" font-size="89.999985" stroke-width=".9375" x="228.76645" y="670.36121">u</tspan></text>
+    <text x="647.8053" y="670.36121"><tspan font-family="Arial" font-size="89.999985" stroke-width=".9375" x="647.8053" y="670.36121">au</tspan></text>
+    <text x="1325.4622" y="670.36121"><tspan font-family="Arial" font-size="89.999985" stroke-width=".9375" x="1325.4622" y="670.36121">eu</tspan></text>
+    <text x="2026.8621" y="670.36121"><tspan font-family="Arial" font-size="89.999985" stroke-width=".9375" x="2026.8621" y="670.36121">äu</tspan></text>
+   </g>
+  </g>
+  <g fill="none" stroke-linecap="round">
+   <g stroke="#000">
+    <g stroke-linejoin="round">
+     <g stroke-width="5.625">
+      <ellipse cx="376.57819" cy="-222.25624" rx="25.728559" ry="20.371418" transform="matrix(.79083574 -.61202846 .61202846 .79083574 0 0)"/>
+      <path d="m141.5-413.8c18.8-29 45-59.3 79.6-64.4 25.2-3.6 41.5 13.2 31.1 46.6-.4 1.2 51.8-91 51.8-91"/>
+      <path d="m1349.6-477.9-56.7 94.9 245.3-95.1"/>
+     </g>
+     <path d="m1263-478.7-47.8 86.7" stroke-width="6.5625"/>
+     <path d="m1159.3-383.9 94.4-95.2-39 72.4c-8.4 15.5 5 26.1 21.5 22.2 2.8-.6 9.4-2.3 14-5.9l18.1-14.2" stroke-width="5.625"/>
+     <path d="m1258.3-478.7-44.7 81.9" stroke-width="6.5625"/>
+    </g>
+    <path d="m1220.1-398.1c-1.6 4.1-2.6 6.5.8 11.9" stroke-width="3.75"/>
+    <g stroke-linejoin="round">
+     <path d="m1263-478.7-9.3-.4" stroke-width="6.5625"/>
+     <path d="m1349.6-477.9-81.3 73.4" stroke-width="5.625"/>
+     <path d="m1804.2-405.4 30.5-26.9 33.3 47.9" stroke-width="5.625"/>
+     <path d="m1834.7-432.4 24 48" stroke-width="5.625"/>
+     <path d="m1844.2-432.4 23.8 47.9" stroke-width="5.625"/>
+     <path d="m1840.3-432.5 24 48" stroke-width="5.625"/>
+    </g>
+    <path d="m1834.6-433.3 9.5-.1" stroke-width="3.75"/>
+    <path d="m1860.4-383.5h7.1" stroke-width="3.75"/>
+    <path d="m1745.7-457.7c15.9-32 75.6-30.6 48.2 3.3-27.4 33.8-47.2 52.6-39.4 63.9 9 13.2 36.1 1.2 49.7-14.9" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m1868-384.5 58.1-95.2" stroke-linejoin="round" stroke-width="5.625"/>
+   </g>
+   <g stroke-linejoin="round">
+    <path d="m2161.1-522c.9-.4-21.3 37-21.3 37" stroke="#000004" stroke-width="5.625"/>
+    <path d="m2164.1-520.2-21 35.8" stroke="#000004" stroke-width="4.338688"/>
+    <path d="m2146.6-484.5-7.6.2" stroke="#000004" stroke-width="4.338688"/>
+    <path d="m2168.9-522.7-22.3 38.2" stroke="#000004" stroke-width="4.338688"/>
+    <path d="m2168.9-522.7-7.9 2.1" stroke="#000004" stroke-width="4.338688"/>
+    <path d="m2161.1-522c-20.9 7.6-216.2 73.4-228 76.2-9.9 2.4-21.1-7.3-7-34" stroke="#000005" stroke-width="5.625"/>
+    <path d="m2168.9-522.7-7.6.2" stroke="#000004" stroke-width="4.338688"/>
+    <g stroke-width="5.625">
+     <path d="m122.5 14.4 20 46 87.8-95.3" stroke="#000"/>
+     <path d="m81.4 60.8 41.1-46.4" stroke="#000"/>
+     <path d="m299.3 22.4-55.6 33.4" stroke="#000"/>
+     <ellipse cx="190.38654" cy="139.0836" rx="25.728559" ry="20.371418" stroke="#000" transform="matrix(.89236516 -.45131411 .45131411 .89236516 0 0)"/>
+     <path d="m230.4-34.8-39.4 73.1c-8.4 15.5 3.8 21.9 21.5 22.2 7.9.1 14.5.5 21.8-1.4" stroke="#000"/>
+     <path d="m540.8 60.5c24-28.1 37.5-42.8 62.4-59.6 70.2-47.3 176.4-60.2 136.7 44.3-1.6 4.3-4.6 10.1-6.8 14.8" stroke="#000100"/>
+    </g>
+    <path d="m720.5-29.6c37.7 14.8 18.9 65.9 7.3 88.1" stroke="#000100" stroke-width="8.437501"/>
+    <path d="m705-33.9c43.3 8.7 32.1 73.3 12.4 93.8" stroke="#000100" stroke-width="5.625"/>
+   </g>
+   <path d="m717.4 59.9 15.7.3" stroke="#000100" stroke-width="5.625"/>
+   <path d="m716.9-30.1c37.7 14.8 18.9 65.9 7.3 88.1" stroke="#000100" stroke-linejoin="round" stroke-width="4.6875"/>
+   <path d="m696.8-32.9c4.9.2 8.8-.4 15.5 2.6" stroke="#000100" stroke-width="2.8125"/>
+   <g stroke-linejoin="round" stroke-width="5.625">
+    <g stroke="#000100">
+     <path d="m733.1 60.1 76.3-49.6c1.1-.7-25.9 49.6-25.9 49.6"/>
+     <path d="m816.4 13.3-25.3 46.6"/>
+     <path d="m795.5 59.8-12 .2"/>
+     <path d="m823.3 10.2-27.7 49.5"/>
+     <path d="m823.3 10.2-14.1-.1"/>
+     <path d="m814.5 11.4-25.3 46.6"/>
+    </g>
+    <g stroke="#000">
+     <path d="m1910.4 60.6 226.5-49.1"/>
+     <path d="m2137 11.6c1-.8-25.9 49.6-25.9 49.6"/>
+     <path d="m2143.9 14.4-25.3 46.6"/>
+     <path d="m2123.1 60.9-12 .2"/>
+     <path d="m2150.8 11.4-27.7 49.5"/>
+     <path d="m2150.8 11.4-14.1-.1"/>
+     <path d="m2142.1 12.5-25.3 46.6"/>
+     <path d="m1793.6 15.6-23.6 45.3"/>
+     <path d="m1825.7 60.3c48.2-61.4 98.5-47.1 84.7.3"/>
+     <path d="m145.6 518.3s28.7-30.5 51.4-31.4c18.1-.7 10.2 30.9 29.9 31 9.6 0 22.2-6 31.3-12.8"/>
+     <path d="m145.4 437.6c26.4-23.8 61.3-21.3 31.5 28.5l-31.2 52.3"/>
+    </g>
+    <path d="m229.4 570.7c16.8-.5 33-21.3 35-47.2 2.1-26.8 46.2-55.8 36.3-48.7l-42.4 30.4" stroke="#060000"/>
+    <g stroke="#000">
+     <path d="m719 425s.4-.2 4.3-2.6c20.8-13.1 39.5-27.2 56.3-43.6 23.8-23.3 34.1-45.8 29.2-54.2-7.8-13.3-36.9 10.3-84.1 88.2l-52.6 106"/>
+     <path d="m703.3 566.7c16.8-.5 33-21.3 35-47.2 2.1-26.8 47.3-53.8 36.3-48.7l-102.4 48"/>
+     <path d="m758.1 485.9c-18.7 24.9-13 28.9-16.8 41.1-3.5 11.7-12.1 25.9-24.2 34.7"/>
+     <path d="m755.2 489c-7.6 7.8-16.9 18.3-21 32.6-4.1 14.4-5.5 33.4-22.5 43.1"/>
+     <path d="m1927.9 321.9-72.8 146.1c-11.4 20.7-5.8 53.9 22.9 49.7"/>
+     <path d="m2058.3 569.7c16.8-.5 33-21.3 35-47.2 2.1-26.8 36.3-48.7 36.3-48.7s-242.9 43.7-251.6 44"/>
+     <path d="m2113 487.1c-18.7 24.9-13 30.7-16.8 42.9-3.5 11.7-12.1 25.9-24.2 34.7"/>
+     <path d="m2109.4 492c-7.6 7.8-16.1 18.3-20.2 32.6-4.1 14.4-5.5 33.4-22.5 43.1"/>
+     <path d="m1715.3 619.4 212.6-297.5"/>
+     <path d="m613.8-419.2 20-13.4 31.3 48.9"/>
+     <path d="m633.8-432.6 23.8 49.1"/>
+     <path d="m641.4-432.5 23.7 48.9"/>
+     <path d="m637.5-432.7 23.8 49.1"/>
+    </g>
+   </g>
+   <g stroke="#000">
+    <path d="m634.2-433.6h7.1" stroke-width="3.75"/>
+    <path d="m657.5-382.6h7.1" stroke-width="3.75"/>
+    <path d="m613.8-419.2c-23.1 16-47.3 33.1-65.4 35.5-53.5-.6 55-173.4 109.6-197.1" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m665.1-383.6s56.5-71.8 91.8-90.2" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m769.5-478.9c-45.6 11.9-85.7 98.4-52.3 95.1" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m947.8-476.2-25.3 46.6" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m926.9-429.8-12 .2" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m954.7-479.3-27.7 49.5" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m954.7-479.3-14.1-.1" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m945.9-478.1-25.3 46.6" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m717.2-383.8c29.3-.3 78.4-36.3 98.6-32.6 15.4 2.9 14.5 30.9 30.3 32.2.6 0 1.2.1 1.8 0 7.4.2 15.9-5.8 21.7-11.6 3.5-3.1 71.4-83.3 71.4-83.3.8-.9-25.9 49.6-25.9 49.6" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m1590 10.2-216.5 5.1" stroke-width="5.625"/>
+    <path d="m1357.6 22c-12.2 9.1-28.1 20.2-36.9 25.1-6.3 3.5-12.2 6.6-19.1 9.3-9.4 3.5-27 9-34.9-4.5-2-3.6-3.2-8.3-3.6-13.9-3.6-43.8 38.3-140.8 101.7-175" stroke-linejoin="round" stroke-width="5.625"/>
+    <path d="m1389.6 25.7a19.2 25.1 41.6 0 1 -14.3 31.3 19.2 25.1 41.6 0 1 -27.6-6.8 19.2 25.1 41.6 0 1 14.3-31.3 19.2 25.1 41.6 0 1 27.6 6.8z" stroke-linejoin="round" stroke-width="5.625001"/>
+   </g>
+   <path d="m1445.1 574.5c16.8-.5 33-21.3 35-47.2 2.1-26.8 36.3-48.7 36.3-48.7l-295.8 40.4" stroke="#060000" stroke-linejoin="round" stroke-width="5.625001"/>
+   <path d="m1220.6 519c43.9-15.9 71.5-94.7 46.6-94.9-7.2-.1-18.9 6.5-35.8 23.2" stroke="#000" stroke-linejoin="round" stroke-width="5.625002"/>
+  </g>
+ </g>
+</svg>
