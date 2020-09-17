@@ -5,7 +5,7 @@
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-05-15 (YYYY-MM-DD)
-# edit:    2020-05-16 (YYYY-MM-DD)
+# edit:    2020-05-17 (YYYY-MM-DD)
 #
 """Ease to trace changes between updates for .svg about DEK.
 
@@ -253,6 +253,7 @@ def retracted_svg():
 def rinse_raw_data():
     """Run git rm example.svg for .svg identified as retracted."""
     register = []
+    root = os.getcwd()
 
     # identify the files in question:
     try:
@@ -265,8 +266,13 @@ def rinse_raw_data():
         print("File 'svg_to_retract.txt' is not accessible.  Exit.")
         sys.exit()
 
-    # act accordingly:
-    os.chdir("raw_data")
+    # act accordingly for the old raw_data:
+    try:
+        os.chdir("raw_data")
+    except IOError:
+        print("No access to 'raw_data' of previous harvests.  Exit.")
+        sys.exit()
+
     print("The following instructions will be sent to git")
     for entry in register:
         command = str("git rm {}".format(entry))
@@ -276,8 +282,31 @@ def rinse_raw_data():
         except IOError:
             print("Error removing file '{}'".format(entry))
             continue
+    os.chdir(root)
 
-    print("\nComplete the rinsing of folder 'raw_data' by a commit.")
+    # act accordingly for the old optimized svg, too:
+    try:
+        os.chdir("dek_workshop")
+    except IOError:
+        print("No access to 'dek_workshop' of previous harvests.  Exit.")
+        sys.exit()
+
+    print("\nThe following instructions will be sent to git")
+    for entry in register:
+        old_file_name = str(entry).strip()
+        new_file_name = old_file_name.split("_-_")[-1]
+        new_file_name = ''.join([str("DEK_VS_steno_svg_-_"), new_file_name])
+
+        command = str("git rm {}".format(new_file_name))
+        print("\n{}".format(command))
+        try:
+            subprocess.call(command, shell=True)
+        except IOError:
+            print("Error removing file '{}'".format(new_file_name))
+            continue
+    os.chdir(root)
+
+    print("\nComplete the rinsing of the two folders by an explicit commit.")
     print("Remove then folder 'retract_svg' in folder 'antechamber'.")
 
 
@@ -304,7 +333,9 @@ group.add_argument(
     '-R',
     '--rinse',
     action='store_true',
-    help='lastly, remove .svg identified as retracted from raw_data')
+    help=
+    'lastly, remove .svg identified as retracted from both senior folders raw_data and dek_workshop'
+)
 
 args = parser.parse_args()
 # clarifications for argparse, end.
