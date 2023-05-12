@@ -4,7 +4,7 @@
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:    [2023-05-11 Thu]
+# edit:    [2023-05-12 Fri]
 #
 """Quick generation of a minimal relational .csv table for Anki.
 
@@ -35,11 +35,23 @@ import sys
 from datetime import date
 
 
+def get_args():
+    """read the arguments by the CLI"""
+    parser = argparse.ArgumentParser(
+        description='Write an initial dek2Anki.csv for Wikimedia .svg \
+about DEK (no tags)')
+
+    return parser.parse_args()
+
+
 def check_python():
     """Assure the script is used with Python 3, only."""
+    environment = True
     if sys.version_info[0] != 3:
         print("\nThe script works with Python 3, only.\n")
-        sys.exit()
+        environment = False
+
+    return environment
 
 
 def create_csv():
@@ -50,6 +62,10 @@ def create_csv():
     for file in os.listdir("."):
         if file.endswith(".svg"):
             file_register.append(file)
+
+    # continue only if the register actually contains something
+    if len(file_register) == 0:
+        sys.exit()
     file_register.sort(key=str.lower)
 
     for entry in file_register:
@@ -72,21 +88,20 @@ def create_csv():
             for record in csv_register:
                 keep = str(f"{record}\n")
                 newfile.write(keep)
+            print("File 'dek2anki.csv' was written.")
     except IOError:
         print("Error writing file 'dek2anki.csv'.  Exit.")
         sys.exit()
 
-    print("File 'dek2anki.csv' was written.")
 
+def main():
+    """join the functionalites"""
+    get_args()
+    test = check_python()
+    if test is False:
+        sys.exit()
+    create_csv()
 
-# clarifications for argparse, start:
-parser = argparse.ArgumentParser(
-    description=
-    'Write an initial dek2Anki.csv for Wikimedia .svg about DEK (no tags)')
-
-args = parser.parse_args()
-# clarifications for argparse, end.
 
 if __name__ == "__main__":
-    check_python()
-    create_csv()
+    main()
