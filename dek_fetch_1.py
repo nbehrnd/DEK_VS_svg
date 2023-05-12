@@ -5,7 +5,7 @@
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-06-02 (YYYY-MM-DD)
-# edit:    [2023-04-27 Thu]
+# edit:    [2023-04-28 Fri]
 #
 """Collect the original .svg about DEK from Wikimedia.
 
@@ -13,91 +13,87 @@ There are 39k+ of .svg files on Wikimedia sharing the tag
 
 SVG Deutsche Einheitskurzschrift
 
-created by Wikimedia user Thirunavukkarasye-Raveendran, who is not the author of
-this project, and published as public domain.  The open site
+created by Wikimedia user Thirunavukkarasye-Raveendran, who is not the
+author of this project, and published as public domain.  The open site
 
 https://tools.wmflabs.org/wikilovesdownloads/
 
-generates a list of the relevant addresses for the files in question with the
-keywords "SVG Deutsche Einheitskurzschrift" as zip-compressed text file, used in
-the project
+generates a list of the relevant addresses for the files in question
+with the keywords "SVG Deutsche Einheitskurzschrift" as zip-compressed
+text file, used in the project
 
 https://github.com/nbehrnd/dek_wikimedia
 
-to eventually generate an Anki deck for training DEK.  To start, the compilation
-o the addresses of the .svg on Wikimedia requires about 1:45 min:s on the server
-of Wikimedia.  Then, this script is launched from the CLI of Python 3 by a call
-in pattern of
+to eventually generate an Anki deck for training DEK.  To start, the
+compilation o the addresses of the .svg on Wikimedia requires about
+1:45 min:s on the server of Wikimedia.  Then, this script is launched
+from the CLI of Python 3 by a call in pattern of
 
-python3 dek_fetch_1.py wikimedia_addresss.txt
+python3 dek_fetch_1.py addresss.txt
 
-where `wikimedia_addresses.txt` is the file with Wikimedia's addresses, which
-however may be of any name or file extension.  This command causes the script to
+where `addresses.txt` is the file with Wikimedia's addresses, which
+however may be of any name or file extension.  This command causes
+the script to
 
 + remove entries which are not about .svg
-+ rewrite the remaining addresses into a form safer for download (no umlauts and
-  other characters which could confuse a web browser or a computer shell as an
-  instruction) into an intermediate file `list_accessed.txt` which is used in
-  the next step of this sequence.
-+ launch `wget2` to download the .svg files in question.  In case the script is
-  used in an environment other than Linux (e.g. Windows), then this requires to
-  add `wget2` into the system's PATH variable.
++ rewrite the remaining addresses into a form safer for download (no
+  umlauts and other characters which could confuse a web browser or a 
+  computer shell as an instruction) into an intermediate file
+  `list_accessed.txt` which is used in   the next step of this
+  sequence.
++ launch `wget2` to download the .svg files in question.  In case the
+  script is used in an environment other than Linux (e.g. Windows),
+  then this requires to add `wget2` into the system's PATH variable.
 
-  Home repository of `wget2`: https://gitlab.com/gnuwget/wget2
-  Documentation: https://rockdaboot.github.io/wget2/md_wget2_manual.html
-  Entry in Linux Debian's repostories: https://tracker.debian.org/pkg/wget2
+Note: The download includes a default constraint of to 5k .svg per
+      run.  Experience shows this is a safer approach to collect the
+      files, than all at once.
+
+Home repository of `wget2`: https://gitlab.com/gnuwget/wget2
+Documentation: https://rockdaboot.github.io/wget2/md_wget2_manual.html
+Entry in Linux Debian's repostories: https://tracker.debian.org/pkg/wget2
 """
 
 import argparse
 import os
-import shutil
 import subprocess as sub
 import sys
-import urllib.parse
-
-root = os.getcwd()
-intermediate_register = []
-address_register = []
-register = []  # stores the content of 'wikimedia_addresses.txt'
+# import urllib.parse
 
 
-def file_read():
+def get_args():
+    """collect instructions from the CLI"""
+    parser = argparse.ArgumentParser(
+        description='file fetcher for Wikimedia .svg about DEK',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument(
+        "file",
+        type=argparse.FileType('r'),
+        help='Input text file, typically "wikimedia_addresses.txt"')
+    parser.add_argument(
+        "-n",
+        "--number",
+        metavar="",
+        type=int,
+        default=5000,
+        help="specify the number of .svg to fetch from Wikimedia's servers.")
+    return parser.parse_args()
+
+
+def file_read(raw_data="", entries=0):
     """Transfer content of the input file into a register."""
     new_list = []
     try:
-        with args.inputfile as source:
-            for line in source:
-                new_list.append(str(line).strip())
+        with raw_data as source:
+            new_list = [line.strip() for line in source]
 
     # except Exception:
     except IOError:
         print("File not accessible, exit.")
         sys.exit()
 
+    new_list = new_list[:entries]
     return new_list
-
-
-def check_raw_data_folder():
-    """Check the presence of folder raw_data; if absent, create it."""
-    remove = False
-
-    for element in os.listdir("."):
-        if (str(element) == str("raw_data")) and os.path.isdir(element):
-            print('There already is a folder "raw_data" -- what to do now?')
-            print("[O]verwrite old folder, or [c]ancel further processing.")
-
-            check = input()
-            if str(check) in ['o', 'O']:
-                remove = True
-            elif str(check) in ['c', 'C']:
-                sys.exit()
-            else:
-                print("Invalid input, exit.")
-                sys.exit()
-
-    if remove:
-        shutil.rmtree("raw_data")
-    os.mkdir("raw_data")
 
 
 def retain_only_svg(listing=None):
@@ -116,28 +112,28 @@ def retain_only_svg(listing=None):
     return new_list
 
 
-def safe_addresses(listing=None):
-    """replace umlauts, parentheses, etc by safer encoding
-
-    Some of the addresses include umlauts, parentheses and other special
-    characters which either may be misinterpreted by the shell as (part
-    of) an instruction, or/and are not reliably transmitted as an address
-    of a web page.  This translation requires Python's standard library
-    `urllib.parse`."""
-    old_list = listing
-    new_list = []
-
-    for entry in old_list:
-        parsed = urllib.parse.urlparse(entry.strip())
-        new_url = urllib.parse.urlunparse(
-            parsed._replace(path=urllib.parse.quote(parsed.path)))
-        new_list.append(new_url)
-
-    return new_list
+# def safe_addresses(listing=None):
+#     """replace umlauts, parentheses, etc by safer encoding
+#
+#     Some of the addresses include umlauts, parentheses and other special
+#     characters which either may be misinterpreted by the shell as (part
+#     of) an instruction, or/and are not reliably transmitted as an address
+#     of a web page.  This translation requires Python's standard library
+#     `urllib.parse`."""
+#     old_list = listing
+#     new_list = []
+#
+#     for entry in old_list:
+#         parsed = urllib.parse.urlparse(entry.strip())
+#         new_url = urllib.parse.urlunparse(
+#             parsed._replace(path=urllib.parse.quote(parsed.path)))
+#         new_list.append(new_url)
+#
+#     return new_list
 
 
 def list2file(listing=None, name=""):
-    """write a list into a permanent record"""
+    """record list of files of interes in a file"""
 
     try:
         with open(file=name, mode="w", encoding="utf-8") as newfile:
@@ -157,8 +153,8 @@ def fetch_svg(name=""):
     added to the system's PATH variable."""
 
     try:
-        command = str(f"wget2 --input-file {name} --continue -nv \
-            --input-encoding utf-8")
+        command = str(
+            f"wget2 --input-file {name} --continue -nv --input-encoding utf-8")
         print(f"\ncommand issued:\n   {command}")
         sub.call(command, shell=True)
     except IOError:
@@ -166,22 +162,25 @@ def fetch_svg(name=""):
         sys.exit()
 
 
-# clarifications for argparse, start:
-parser = argparse.ArgumentParser(
-    description='file fetcher for Wikimedia .svg about DEK')
-parser.add_argument(
-    'inputfile',
-    type=argparse.FileType('r'),
-    help='Input text file, typically "wikimedia_addresses.txt"')
-args = parser.parse_args()
-# clarifications for argparse, end.
+def check_progress():
+    """report how many .svg were saved"""
+    counter = 0
+    for file in os.listdir("."):
+        if str(file).endswith(".svg"):
+            counter += 1
+    print(f"The folder contains {counter} .svg files.")
+
+
+def main():
+    """join functionalities"""
+    args = get_args()
+
+    raw_data = file_read(args.file, args.number)
+    filtered_list = retain_only_svg(raw_data)
+    list2file(filtered_list, "svg_of_interest.txt")
+
+    fetch_svg("svg_of_interest.txt")
+    check_progress()
 
 if __name__ == "__main__":
-    #    check_raw_data_folder()
-    raw_data = file_read()
-    only_svg = retain_only_svg(listing=raw_data)
-
-    #    reencoded = safe_addresses(listing=only_svg)
-
-    list2file(listing=only_svg, name="list_accessed.txt")
-    fetch_svg(name="list_accessed.txt")
+    main()
