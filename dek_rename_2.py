@@ -5,7 +5,7 @@
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:    [2023-05-11 Thu]
+# edit:    [2023-05-12 Fri]
 #
 """Rename the .svg for an Anki deck.
 
@@ -16,6 +16,10 @@ and uniform string of
 ```
 _Deutsche_Einheitskurzschrift_-_Verkehrsschrift_-_
 ```
+
+which is going to be replaced by `+`.  Contrasting to underscore,
+hyphen, colon, it is less likely one of the DEK examples is going
+to use the plus sign as a separator (sub) string.
 
 For the creation of the Anki deck, the short `DEK` about the topic,
 and -- where assigned -- tag like `G_` (as in `G_DEK_Aachen.svg`)
@@ -30,15 +34,26 @@ import shutil
 import sys
 
 
+def get_args():
+    """ read the command line arguments """
+    parser = argparse.ArgumentParser(
+        description="Shorten the .svg file names about DEK symbolizations")
+
+    return parser.parse_args()
+
+
 def check_python():
     """assure the script is used with Python 3 only.
 
     This is not only because of the transition of Python2 to Python3,
     but at least equally because of the (better) support for utf-8
     and hence umlauts, and other special characters."""
+    environment_test = True
     if sys.version_info[0] != 3:
         print("\nThe script is set up to work with Python 3, only.\n")
-        exit()
+        environment_test = False
+
+    return environment_test
 
 
 def create_new_name(input_string):
@@ -52,7 +67,10 @@ def create_new_name(input_string):
 
 def main():
     """join the actions"""
-    check_python()
+    get_args()
+    test = check_python()
+    if test is False:
+        sys.exit()
 
     for file in os.listdir("."):
         if str(file).endswith(".svg"):
@@ -62,13 +80,6 @@ def main():
             except OSError:
                 print(f"Error while working on {file}.")
 
-
-# clarifications for argparse, start:
-parser = argparse.ArgumentParser(
-    description="Shorten the .svg file names about DEK symbolizations")
-
-args = parser.parse_args()
-# clarifications for argparse, end.
 
 if __name__ == "__main__":
     main()
