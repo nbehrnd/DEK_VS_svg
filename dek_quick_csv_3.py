@@ -1,10 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
-# date:    2020-05-31 (YYYY-MM-DD)
-# edit:    [2023-05-12 Fri]
+# date:    <2020-05-31 Thu>
+# edit:    <2023-05-25 Thu>
 #
 """Quick generation of a minimal relational .csv table for Anki.
 
@@ -38,35 +38,26 @@ from datetime import date
 def get_args():
     """read the arguments by the CLI"""
     parser = argparse.ArgumentParser(
-        description='Write an initial dek2Anki.csv for Wikimedia .svg \
-about DEK (no tags)')
+        description="Write an initial dek2Anki.csv about Wikimedia DEK .svg")
 
     return parser.parse_args()
 
 
-def check_python():
-    """Assure the script is used with Python 3, only."""
-    environment = True
-    if sys.version_info[0] != 3:
-        print("\nThe script works with Python 3, only.\n")
-        environment = False
-
-    return environment
-
-
-def create_csv():
-    """Write relational table csv2anki.csv about keys and images."""
-    file_register = []
-    csv_register = []
+def tally_files():
+    """identify the files the preliminary Anki deck could cover"""
+    register = []
 
     for file in os.listdir("."):
         if file.endswith(".svg"):
-            file_register.append(file)
+            register.append(file)
 
-    # continue only if the register actually contains something
-    if len(file_register) == 0:
-        sys.exit()
-    file_register.sort(key=str.lower)
+    register.sort(key=str.lower)
+    return register
+
+
+def create_csv(file_register):
+    """Write relational table csv2anki.csv about keys and images."""
+    csv_register = []
 
     for entry in file_register:
         file_name = str(entry)
@@ -97,10 +88,8 @@ def create_csv():
 def main():
     """join the functionalites"""
     get_args()
-    test = check_python()
-    if test is False:
-        sys.exit()
-    create_csv()
+    register = tally_files()
+    create_csv(register)
 
 
 if __name__ == "__main__":

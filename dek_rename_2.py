@@ -1,11 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # name:    dek_rename.py
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
-# date:    2020-05-31 (YYYY-MM-DD)
-# edit:    [2023-05-12 Fri]
+# date:    <2020-05-31 Sun>
+# edit:    <2023-05-25 Thu>
 #
 """Rename the .svg for an Anki deck.
 
@@ -31,7 +31,6 @@ import argparse
 import os
 import re
 import shutil
-import sys
 
 
 def get_args():
@@ -40,20 +39,6 @@ def get_args():
         description="Shorten the .svg file names about DEK symbolizations")
 
     return parser.parse_args()
-
-
-def check_python():
-    """assure the script is used with Python 3 only.
-
-    This is not only because of the transition of Python2 to Python3,
-    but at least equally because of the (better) support for utf-8
-    and hence umlauts, and other special characters."""
-    environment_test = True
-    if sys.version_info[0] != 3:
-        print("\nThe script is set up to work with Python 3, only.\n")
-        environment_test = False
-
-    return environment_test
 
 
 def create_new_name(input_string):
@@ -68,9 +53,6 @@ def create_new_name(input_string):
 def main():
     """join the actions"""
     get_args()
-    test = check_python()
-    if test is False:
-        sys.exit()
 
     for file in os.listdir("."):
         if str(file).endswith(".svg"):
