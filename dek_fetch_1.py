@@ -3,9 +3,9 @@
 
 # name:    dek_fetch_1.py
 # author:  nbehrnd@yahoo.com
-# license: MIT, 2020
+# license: GPLv2
 # date:    <2020-06-02 Tue>
-# edit:    <2023-05-25 Thu>
+# edit:    <2023-05-30 Tue>
 #
 """Collect the original .svg about DEK from Wikimedia.
 
@@ -109,7 +109,7 @@ def retain_only_svg(listing=None):
 
     if bad_list:
         try:
-            with open(file="bad_list.txt", mode="wt", encoding="utf-8") as new:
+            with open(file="bad_list.txt", mode="at", encoding="utf-8") as new:
                 for entry in bad_list:
                     new.write(f"{entry} \n")
             print(f"See `bad_list.txt` for {len(bad_list)} entries removed.")
