@@ -30,7 +30,7 @@ review still is retained in this script, the script does not use it."""
 import argparse
 import os
 import shutil
-# import sys
+import sys
 
 # from hyphen import Hyphenator  # this is outside of Python's standard library
 # h_de = Hyphenator('de_DE')
@@ -40,7 +40,7 @@ def get_args():
     """Get command-line arguments"""
 
     parser = argparse.ArgumentParser(
-        description='Rock the Casbah',
+        description='second level consolidation of the .csv',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument('file',
@@ -98,7 +98,15 @@ def dimension_filter(old_listing):
     list_pass, list_skip, list_inaccessible = [], [], []
 
     to_check = str("svg_skipped")
-    os.mkdir(to_check)
+    try:
+        os.mkdir(to_check)
+    except IOError:
+        if os.path.isdir(to_check):
+            print(f"\nNote, folder `{to_check}` already exists.")
+            print("To prevent unwarranted overwrite, the script's action stops.")
+            sys.exit()
+        else:
+            print(f"error to create {to_check}")
 
     for entry in old_listing:
         image_source = entry.split("img src=")[1]
@@ -139,7 +147,7 @@ def tag_entries(old_list):
         entry = "; ".join([entry, tag])
         new_list.append(entry)
 
-    print(f"{len(new_list)} entries retained for `revised_anki4dek.csv`.")
+    print(f"\n{len(new_list)} entries retained in `revised_anki4dek.csv`.")
     try:
         with open(file="revised_anki4dek.csv", mode="wt",
                   encoding="utf-8") as new:
@@ -271,7 +279,7 @@ def main():
     if list_skip:
         print("\nconsult folder `svg_skipped`")
 
-
+    tag_entries(list_pass)
 # --------------------------------------------------
 if __name__ == '__main__':
     main()

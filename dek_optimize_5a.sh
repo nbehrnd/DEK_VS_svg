@@ -4,7 +4,7 @@
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2023
 # date:    <2023-05-25 Thu>
-# edit:
+# edit:    <2023-06-05 Mon>
 #
 # Concept study to moderate svgcleaner.  Deposit both this bash script
 # and the svgcleaner (with provision of the executable bit), and run
@@ -17,7 +17,7 @@
 
 for num in {1..5}
 do
-
+    echo "$file"
     for file in *.svg; do
 
         input_file="$file"

@@ -5,7 +5,7 @@
 # author:  nbehrnd@yahoo.com
 # license: GPLv2
 # date:    <2020-06-02 Tue>
-# edit:    <2023-05-30 Tue>
+# edit:    <2023-06-05 Mon>
 #
 """Collect the original .svg about DEK from Wikimedia.
 
@@ -106,6 +106,7 @@ def retain_only_svg(listing=None):
             new_list.append(entry)
         else:
             bad_list.append(entry)
+    print(f"{len(new_list)} files qualify for a download.")
 
     if bad_list:
         try:
@@ -141,7 +142,9 @@ def fetch_svg(name=""):
 
     try:
         command = str(
-            f"wget2 --input-file {name} --continue -nv --input-encoding utf-8")
+            f"wget2 --input-file {name} --continue -nv \
+            --input-encoding utf-8 --max-threads=4 -c -w 0.2 \
+            --tries 0 --random-wait --progress=bar")
         print(f"\ncommand issued:\n   {command}")
         sub.call(command, shell=True)
     except IOError:

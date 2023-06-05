@@ -4,7 +4,7 @@
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2023
 # date:    <2023-05-25 Thu>
-# edit:
+# edit:    <2023-06-05 Mon>
 #
 # Concept study to moderate svgcleaner.  Deposit both this bash script
 # and the svgcleaner (with provision of the executable bit), and run
@@ -31,6 +31,7 @@ parameters="--quiet --indent 1 \
 
 for file in *.svg
   do
+  echo "$file"
   ./svgcleaner $parameters $file -c | ./svgcleaner $parameters - -c | \
     ./svgcleaner $parameters - -c | ./svgcleaner $parameters - -c | \
     ./svgcleaner $parameters - -c > "$file".out.svg
