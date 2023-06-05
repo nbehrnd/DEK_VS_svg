@@ -1,3 +1,26 @@
+# name:    README.org
+# author:  nbehrnd@yahoo.com
+# license: GPLv2
+# date:
+# edit:    <2023-06-05 Mon>
+
+** background
+
+   Wikimedia currently contains 39349 symbolizations about the first
+   degree of simplification (Verkehrsschrift) of Deutsche
+   Einheitskurzschrift (DEK) created by user
+   [[https://commons.wikimedia.org/wiki/User:Thirunavukkarasye-Raveendran][Thirunavukkarasye-Raveendran]] (who is not author of this
+   repository).  To facilitate self-study (training to read the short
+   hand, and compare your symbolization with a reference),
+   34176 double sided flash cards are assembled in this ongoing
+   project's Anki deck.
+
+   To access the Anki deck, do not download the project, but visit the
+   release page for the corresponding .zip.  Deflated, the Anki deck's
+   volume only is about 27 MB.
+   
+
+#+begin_comment
 * Hintergrund
 
   Wikimedia enthält mehr als 26 Tausend Illustrationen zur
@@ -62,7 +85,7 @@
   Aufnahme der dann in Anki erstellten decks.  Die releases enthalten
   ausschließlich die aktuellen decks, dank nochmaliger Kompression
   etwa 20 MByte.
-
+  
 * Nutzung
 
   Das entpackte release enthält das Anki deck =DEK_VS_svg.apkg=.  Es
@@ -128,3 +151,5 @@
   + einfachem 'sch' (im Gegensatz zu 'schl', 'schm', 'schn', 'schr'),
     'st' (im Gegensatz zu 'str'), 'tr' (im Gegensatz zu 'str')
   + 'un-' am Wortanfang (im Gegensatz zu 'unter-').
+
+#+end_comment    
