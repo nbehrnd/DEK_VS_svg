@@ -5,7 +5,7 @@
 # author:  nbehrnd@yahoo.com
 # license: GPLv2
 # date:    2020-05-31 (YYYY-MM-DD)
-# edit:    <2023-05-30 Tue>
+# edit:    <2023-06-12 Mon>
 #
 """ Consolidation of dek_quick_csv.py's dek2anki.csv relational table.
 
@@ -69,7 +69,10 @@ def whitelist_categories(old_list):
     are considered not useful for the deck to build; for example `T` (longer
     texts).  I would like to gradually open  the deck by white listing the
     sub sets."""
-    tags_white_list = ["DEK"]
+    tags_white_list = [
+        "DEK", "A_DEK", "B_DEK", "C_DEK", "E_DEK", "F_DEK", "G_DEK", "K_DEK",
+        "N_DEK", "O_DEK", "P_DEK", "L_DEK", "U_DEK", "V_DEK", "Z_DEK"
+    ]
     new_list = []
 
     for entry in old_list:
@@ -103,7 +106,8 @@ def dimension_filter(old_listing):
     except IOError:
         if os.path.isdir(to_check):
             print(f"\nNote, folder `{to_check}` already exists.")
-            print("To prevent unwarranted overwrite, the script's action stops.")
+            print(
+                "To prevent unwarranted overwrite, the script's action stops.")
             sys.exit()
         else:
             print(f"error to create {to_check}")
@@ -280,6 +284,8 @@ def main():
         print("\nconsult folder `svg_skipped`")
 
     tag_entries(list_pass)
+
+
 # --------------------------------------------------
 if __name__ == '__main__':
     main()
