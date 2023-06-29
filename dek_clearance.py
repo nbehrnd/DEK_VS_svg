@@ -5,7 +5,7 @@ name   : dek_clearance.py
 author : nbehrnd@yahoo.com
 license: GPLv2
 date   : <2023-06-04 Sun>
-edit   :
+edit   : <2023-06-28 Wed>
 """
 
 import argparse
@@ -104,6 +104,40 @@ def remove_files_without_reference(reference):
                 os.remove(file)
 
 
+def report_synopsis():
+    """briefly list the population of the categories
+
+    Some of the symbolizations belong to a particular topical sub set, such as
+    `G_DEK` about geography, `L_DEK` about Latin, etc.  This allows a training
+    based on this tag reflected in the files' file name and is an information
+    equally useful to report on the project's landing page."""
+    tag_listing = []
+    assistant_dictionary = {}
+    key_listing = []
+
+    for file in os.listdir("."):
+        if str(file).endswith(".svg"):
+            tag = str(file).split("+")[0]
+            tag_listing.append(tag)
+
+    for tag in tag_listing:
+        assistant_dictionary.setdefault(tag, 0)
+        assistant_dictionary[tag] = assistant_dictionary[tag] + 1
+
+    key_listing = list(assistant_dictionary.keys())
+    key_listing.sort()
+
+    # eventually report back to the CLI:
+    total = 0
+    print(f"{'set':5} {'entries':>8}")
+    print(5 * "-", 8 * "-")
+    for key in key_listing:
+        print(f"{key:5} {assistant_dictionary.get(key):8}")
+        total += int(assistant_dictionary.get(key))
+    print(5 * "-", 8 * "-")
+    print(f"{'sum':5} {total:8}")
+
+
 def main():
     """Join the functionalities"""
 
@@ -111,6 +145,7 @@ def main():
     remove_empty_files()
     remove_entries_without_file(args.file.name)
     remove_files_without_reference(args.file.name)
+    report_synopsis()
 
 
 # --------------------------------------------------
