@@ -1,4 +1,4 @@
-<img src="./landing_700px.png" width="700" />
+<img src="./landing_645px.png" width="645" />
 
 ## background
 
