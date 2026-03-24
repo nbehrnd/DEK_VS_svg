@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# SPDX-License-Identifier: GPL-3.0-only
 
 # name:    dek_csv_4.py
 # author:  nbehrnd@yahoo.com
 # license: GPLv2
-# date:    2020-05-31 (YYYY-MM-DD)
-# edit:    <2023-06-12 Mon>
+# date:    [2020-05-31 Sun]
+# edit:    [2026-03-24 Tue]
 #
 """ Consolidation of dek_quick_csv.py's dek2anki.csv relational table.
 

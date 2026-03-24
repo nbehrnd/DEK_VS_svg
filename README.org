@@ -1,8 +1,8 @@
 # name:    README.org
 # author:  nbehrnd@yahoo.com
-# license: GPLv2
-# date:    <2020-06-05 Fri>
-# edit:    <2023-07-05 Wed>
+# license: GPLv3
+# date:    [2020-06-05 Fri]
+# edit:    [2026-03-24 Tue]
 
 #+OPTIONS: ^:nil
 #+OPTIONS: TOC:nil
@@ -204,3 +204,12 @@
   + 'un-' am Wortanfang (im Gegensatz zu 'unter-').
 
 #+end_comment    
+
+
+* License
+
+- Source code: Licensed under GPLv3.  For the full text, see [[https://spdx.org/licenses/GPL-3.0-only.html][GPLv3]]
+- Data derived from the symbolizations on Wikipedia, including the
+  Anki Deck: Licensed under CC-BY-NC-ND-4.0.  For the full text, see
+  [[https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode][CC-BY-NC-ND-4.0]].
+  

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# SPDX-License-Identifier: GPL-3.0-only
 
 # name:    dek_fetch_1.py
 # author:  nbehrnd@yahoo.com
 # license: GPLv2
-# date:    <2020-06-02 Tue>
-# edit:    <2023-06-05 Mon>
+# date:    [2020-06-02 Tue]
+# edit:    [2026-03-24 Tue]
 #
 """Collect the original .svg about DEK from Wikimedia.
 

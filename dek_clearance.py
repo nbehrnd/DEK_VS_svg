@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# SPDX-License-Identifier: GPL-3.0-only
 """
 name   : dek_clearance.py
 author : nbehrnd@yahoo.com
 license: GPLv2
-date   : <2023-06-04 Sun>
-edit   : <2023-06-28 Wed>
+date   : [2023-06-04 Sun]
+edit   : [2026-03-24 Tue]
 """
 
 import argparse

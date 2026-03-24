@@ -28,24 +28,24 @@ part](https://gnisitricks.de/de/2020/05/Automatisch-Karteikarten-Teil-2/)).
 So far, only a small fraction of about 10% are indexed with a different
 tag than `DEK`, which is the default. The sets available are:
 
-|   set | entries | Symbolisierungen thematisieren / symbolizations are about               |
-|------:|--------:|-------------------------------------------------------------------------|
-| A_DEK |     182 | Abkürzungen / abbreviations                                             |
-| B_DEK |     531 | Symbolisierung mit zwei Worten / two word symbolizations                |
-| C_DEK |     171 | Symbolisierung mit drei Worten / three word symbolizations              |
-|   DEK |   34377 | (noch) nicht indizierter Grundeintrag / not (yet) indexed symbolization |
-| E_DEK |     139 | Englisch / symbolization of English words                               |
-| F_DEK |     120 | falsche Symbolisierung / erroneous symbolizations                       |
-| G_DEK |     837 | geographische Beispiele / terms of geography                            |
-| K_DEK |     280 | Beispiele zu Kürzeln / examples how to use Kuerzel                      |
-| L_DEK |      55 | lateinische Begriffe / terms related to Latin                           |
-| N_DEK |      48 | nicht empfohlene Symbolisierungen / not recommended symbolizations      |
-| O_DEK |      31 | Organizationen, Marken / organizations, trade marks (e.g., UNO)         |
-| P_DEK |     563 | Namen und Personen / names and historic personalities                   |
-| U_DEK |     195 | Unterscheidungszeichen / use of special signs in symbolizations         |
-| V_DEK |     381 | vergleichende Gegenüberstellungen / contrasting comparisons             |
-| Z_DEK |     208 | kurze Sätze und Sprichworte / short phrases and proverbs                |
-| total |   38118 |                                                                         |
+| set | entries | Symbolisierungen thematisieren / symbolizations are about |
+|---:|---:|----|
+| A_DEK | 182 | Abkürzungen / abbreviations |
+| B_DEK | 531 | Symbolisierung mit zwei Worten / two word symbolizations |
+| C_DEK | 171 | Symbolisierung mit drei Worten / three word symbolizations |
+| DEK | 34377 | (noch) nicht indizierter Grundeintrag / not (yet) indexed symbolization |
+| E_DEK | 139 | Englisch / symbolization of English words |
+| F_DEK | 120 | falsche Symbolisierung / erroneous symbolizations |
+| G_DEK | 837 | geographische Beispiele / terms of geography |
+| K_DEK | 280 | Beispiele zu Kürzeln / examples how to use Kuerzel |
+| L_DEK | 55 | lateinische Begriffe / terms related to Latin |
+| N_DEK | 48 | nicht empfohlene Symbolisierungen / not recommended symbolizations |
+| O_DEK | 31 | Organizationen, Marken / organizations, trade marks (e.g., UNO) |
+| P_DEK | 563 | Namen und Personen / names and historic personalities |
+| U_DEK | 195 | Unterscheidungszeichen / use of special signs in symbolizations |
+| V_DEK | 381 | vergleichende Gegenüberstellungen / contrasting comparisons |
+| Z_DEK | 208 | kurze Sätze und Sprichworte / short phrases and proverbs |
+| total | 38118 |  |
 
 About 5% of the symbolizations available on Wikimedia's servers are
 perceived to be not (yet) suitable for an inclusion in this Anki deck.
@@ -62,3 +62,11 @@ initial global file size (approx. 340 MB) of the raw data to about 30 MB
 page](https://github.com/nbehrnd/DEK_VS_svg/releases) as an asset), or
 about 50 MB within Anki's folder `collection.media` after the import
 into the program.
+
+# License
+
+- Source code: Licensed under GPLv3. For the full text, see
+  [GPLv3](https://spdx.org/licenses/GPL-3.0-only.html)
+- Data derived from the symbolizations on Wikipedia, including the Anki
+  Deck: Licensed under CC-BY-NC-ND-4.0. For the full text, see
+  [CC-BY-NC-ND-4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode).

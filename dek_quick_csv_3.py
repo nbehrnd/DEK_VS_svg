@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# SPDX-License-Identifier: GPL-3.0-only
 
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
-# date:    <2020-05-31 Thu>
-# edit:    <2023-05-25 Thu>
+# date:    [2020-05-31 Thu]
+# edit:    [2026-03-24 Tue]
 #
 """Quick generation of a minimal relational .csv table for Anki.
 

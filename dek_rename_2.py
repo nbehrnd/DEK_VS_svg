@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# SPDX-License-Identifier: GPL-3.0-only
 
 # name:    dek_rename.py
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2020
-# date:    <2020-05-31 Sun>
-# edit:    <2023-05-25 Thu>
+# date:    [2020-05-31 Sun]
+# edit:    [2026-03-24 Tue]
 #
 """Rename the .svg for an Anki deck.
 

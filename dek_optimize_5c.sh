@@ -1,10 +1,11 @@
 #!/usr/bin/bash
+# SPDX-License-Identifier: GPL-3.0-only
 
 # name:    dek_optimize_5c.sh
 # author:  nbehrnd@yahoo.com
 # license: MIT, 2023
-# date:    <2023-06-13 Wed>
-# edit:    <2023-06-29 Thu>
+# date:    [2023-06-13 Wed]
+# edit:    [2026-03-24 Tue]
 #
 # Concept study to moderate svgcleaner.  Deposit both this bash script
 # and the svgcleaner (with provision of the executable bit), and run
